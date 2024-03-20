@@ -24,53 +24,88 @@
     </div>
 
     <script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="wordContainer">
+        <h2>Translate the word:</h2>
+        <div>
+            <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
+            <label for="englishToDutch">English to Dutch</label>
+        </div>
+        <div>
+            <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
+            <label for="dutchToEnglish">Dutch to English</label>
+        </div>
+        <p id="wordToTranslate"></p>
+        <input type="text" id="translationInput" placeholder="Enter translation">
+        <button id="submitBtn" onclick="checkTranslation()">Submit</button>
+        <p id="resultMessage"></p>
+    </div>
+
+    <script>
+        // Define the word variable outside the fetch block
+        let word;
+
         // Fetch word data from JSON file
         fetch('words.json')
             .then(response => response.json())
             .then(data => {
-                let translationDirection = "englishToDutch"; // Default to English to Dutch
-
-                // Function to update translation direction based on radio button selection
-                function updateTranslationDirection() {
-                    translationDirection = document.querySelector('input[name="translationDirection"]:checked').value;
-                }
-
-                // Function to get a random word based on translation direction
-                function getRandomWord() {
-                    const randomIndex = Math.floor(Math.random() * data.length);
-                    return data[randomIndex];
-                }
-
-                // Function to display a word for translation
-                function displayWordForTranslation() {
-                    const word = getRandomWord();
-                    document.getElementById("wordToTranslate").textContent = (translationDirection === "englishToDutch") ? word.english : word.dutch;
-                }
-
-                // Call displayWordForTranslation initially
+                // Once data is fetched, choose a random word
+                word = getRandomWord(data);
+                
+                // Display the word for translation
                 displayWordForTranslation();
-
-                // Check translation
-                function checkTranslation() {
-                    const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
-                    const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
-
-                    if (userInput === correctTranslation) {
-                        document.getElementById("resultMessage").textContent = "Correct! Well done.";
-                    } else {
-                        document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
-                    }
-
-                    // Display a new word for translation after checking
-                    displayWordForTranslation();
-                }
-
-                // Event listener to update translation direction when radio buttons are clicked
-                document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
-                    radio.addEventListener('click', updateTranslationDirection);
-                });
             })
             .catch(error => console.error('Error fetching word data:', error));
+
+        // Function to get a random word based on translation direction
+        function getRandomWord(data) {
+            const randomIndex = Math.floor(Math.random() * data.length);
+            return data[randomIndex];
+        }
+
+        // Function to display a word for translation
+        function displayWordForTranslation() {
+            document.getElementById("wordToTranslate").textContent = (translationDirection === "englishToDutch") ? word.english : word.dutch;
+        }
+
+        // Function to check translation
+        function checkTranslation() {
+            const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
+            const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
+
+            if (userInput === correctTranslation) {
+                document.getElementById("resultMessage").textContent = "Correct! Well done.";
+            } else {
+                document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
+            }
+
+            // Display a new word for translation after checking
+            word = getRandomWord(data);
+            displayWordForTranslation();
+        }
+
+        // Event listener to update translation direction when radio buttons are clicked
+        document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
+            radio.addEventListener('click', updateTranslationDirection);
+        });
+
+        // Function to update translation direction based on radio button selection
+        function updateTranslationDirection() {
+            translationDirection = document.querySelector('input[name="translationDirection"]:checked').value;
+            displayWordForTranslation(); // Display the word for translation with the updated direction
+        }
+    </script>
+</body>
+</html>
+
     </script>
 </body>
 </html>
