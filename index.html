@@ -24,8 +24,8 @@
     </div>
 
     <script>
-        // Define the word variable outside the fetch block
         let word;
+        let translationDirection = "englishToDutch"; // Default translation direction
 
         // Fetch word data from JSON file with error handling
         fetch('words.json')
@@ -36,11 +36,15 @@
                 return response.json();
             })
             .then(data => {
-                // Once data is fetched, choose a random word
-                word = getRandomWord(data);
-                
-                // Display the word for translation
-                displayWordForTranslation();
+                if (data && data.length > 0) {
+                    // Once data is fetched, choose a random word
+                    word = getRandomWord(data);
+
+                    // Display the word for translation
+                    displayWordForTranslation();
+                } else {
+                    console.error('No data found in words.json');
+                }
             })
             .catch(error => {
                 console.error('Error fetching word data:', error);
@@ -54,23 +58,31 @@
 
         // Function to display a word for translation
         function displayWordForTranslation() {
-            document.getElementById("wordToTranslate").textContent = (translationDirection === "englishToDutch") ? word.english : word.dutch;
+            if (word) {
+                document.getElementById("wordToTranslate").textContent = (translationDirection === "englishToDutch") ? word.english : word.dutch;
+            } else {
+                console.error("Word is undefined or null");
+            }
         }
 
         // Function to check translation
         function checkTranslation() {
             const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
-            const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
+            if (word) {
+                const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
 
-            if (userInput === correctTranslation) {
-                document.getElementById("resultMessage").textContent = "Correct! Well done.";
+                if (userInput === correctTranslation) {
+                    document.getElementById("resultMessage").textContent = "Correct! Well done.";
+                } else {
+                    document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
+                }
+
+                // Display a new word for translation after checking
+                word = getRandomWord(data);
+                displayWordForTranslation();
             } else {
-                document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
+                console.error("Word is undefined or null");
             }
-
-            // Display a new word for translation after checking
-            word = getRandomWord(data);
-            displayWordForTranslation();
         }
 
         // Event listener to update translation direction when radio buttons are clicked
