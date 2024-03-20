@@ -30,3 +30,9 @@ body {
     margin-top: 10px;
     color: #FF6347;
 }
+
+#wordToTranslate {
+    border: 2px solid #333; /* Add a 2px solid border with color #333 */
+    padding: 10px; /* Add some padding to create space between the border and the text */
+    display: inline-block; /* Make the element inline-block to fit the content */
+}
