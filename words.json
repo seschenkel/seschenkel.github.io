@@ -1,6 +1,5 @@
 [
     { "english": "Thanks", "dutch": "Bedankt" },
     { "english": "Hello", "dutch": "Hallo" },
-    { "english": "Goodbye", "dutch": "Tot ziens" },
-    // Add more words here as needed
+    { "english": "Goodbye", "dutch": "Tot ziens" }
 ]
