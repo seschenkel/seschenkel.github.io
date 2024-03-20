@@ -1,57 +1,107 @@
+/* Reset default margin and padding */
+html, body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply box-sizing border-box to all elements */
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+/* Body styles */
 body {
     font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Header styles */
+h1 {
     text-align: center;
-    background-color: #f0f0f0;
+    margin-bottom: 20px;
 }
 
-#wordContainer {
-    margin-top: 20px;
+/* Dropdown styles */
+/* Style the dropdown container */
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-#translationInput {
-    width: 80%;
-    padding: 10px;
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-#submitBtn {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
+/* Style the dropdown button */
+.dropdown-button {
+    appearance: none; /* Remove default appearance */
+    -webkit-appearance: none; /* Remove default appearance for WebKit browsers */
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    cursor: pointer;
+    padding: 10px;
     font-size: 16px;
-    margin-top: 10px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
 }
 
-#resultMessage {
-    margin-top: 10px;
-    color: #FF6347;
+/* Style the dropdown arrow */
+.dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #555;
 }
 
-#wordToTranslate {
-    border: 2px solid #333; /* Add a 2px solid border with color #333 */
-    padding: 10px; /* Add some padding to create space between the border and the text */
-    display: inline-block; /* Make the element inline-block to fit the content */
+/* Style the dropdown options */
+.dropdown-options {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100% - 22px); /* Account for border and padding */
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000; /* Ensure dropdown is above other elements */
 }
 
-.button {
-    background-color: #4CAF50; /* Green background */
-    border: none;
-    color: white; /* White text */
-    padding: 15px 32px; /* Padding */
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s; /* Animation */
+/* Style the dropdown options on hover */
+.dropdown-options:hover {
     cursor: pointer;
 }
 
-/* Change background color of buttons on hover */
-.button:hover {
-    background-color: #45a049;
+/* Show dropdown options when dropdown button is clicked */
+.dropdown-container.open .dropdown-options {
+    display: block;
+}
+
+/* Style the dropdown options list */
+.dropdown-options ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the dropdown option items */
+.dropdown-options li {
+    padding: 5px 0;
+}
+
+/* Style the dropdown option items on hover */
+.dropdown-options li:hover {
+    background-color: #f0f0f0;
 }
