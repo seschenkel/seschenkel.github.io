@@ -95,8 +95,35 @@
 
         // Function to load next word
         function nextWord() {
-            loadWordList(); // Reload the word list to fetch a new word
+            fetch('words.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.length > 0) {
+                        // Choose a new random word
+                        word = getRandomWord(data);
+
+                        // Display the new word for translation
+                        displayWordForTranslation();
+
+                        // Clear previous result message
+                        document.getElementById("resultMessage").textContent = "";
+
+                        // Clear input field
+                        document.getElementById("translationInput").value = ""; // Clear input field
+                    } else {
+                        console.error('No data found in words.json');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching word data:', error);
+                });
         }
+
 
         // Event listener for translation direction radio buttons
         document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
