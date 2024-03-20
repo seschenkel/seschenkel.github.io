@@ -1,5 +1,12 @@
 [
-    { "english": "Thanks", "dutch": "Bedankt" },
-    { "english": "Hello", "dutch": "Hallo" },
-    { "english": "Goodbye", "dutch": "Tot ziens" }
+    { "english": "hello", "dutch": "hallo" },
+    { "english": "goodbye", "dutch": "vaarwel" },
+    { "english": "please", "dutch": "alstublieft" },
+    { "english": "thank you", "dutch": "dank je" },
+    { "english": "yes", "dutch": "ja" },
+    { "english": "no", "dutch": "nee" },
+    { "english": "sorry", "dutch": "sorry" },
+    { "english": "excuse me", "dutch": "pardon" },
+    { "english": "how are you?", "dutch": "hoe gaat het met je?" },
+    { "english": "I'm fine", "dutch": "met mij gaat het goed" }
 ]
