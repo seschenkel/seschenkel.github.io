@@ -112,12 +112,17 @@
                     console.error('Error fetching word data:', error);
                 });
         }
-        // Event listener for Enter key press in the translation input field
-        document.getElementById("translationInput").addEventListener("keypress", function(event) {
-            if (event.keyCode === 13) {
-                checkTranslation(); // Submit the answer if Enter key is pressed
-            }
+
+        // Event listener for translation direction radio buttons
+        document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
+            radio.addEventListener('change', updateTranslationDirection);
         });
+
+        // Function to update translation direction based on radio button selection
+        function updateTranslationDirection(event) {
+            translationDirection = event.target.value;
+            displayWordForTranslation(); // Display the word for translation with the updated direction
+        }
     </script>
 </body>
 </html>
