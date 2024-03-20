@@ -10,6 +10,14 @@
     <div id="wordContainer">
         <h2>Translate the word:</h2>
         <div>
+            <label for="wordLists">Choose a word list:</label>
+            <select id="wordLists" onchange="loadWordList()">
+                <option value="words1.json">Word List 1</option>
+                <option value="words2.json">Word List 2</option>
+                <!-- Add more options for different word lists -->
+            </select>
+        </div>
+        <div>
             <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
             <label for="englishToDutch">English to Dutch</label>
         </div>
@@ -19,8 +27,8 @@
         </div>
         <p id="wordToTranslate"></p>
         <input type="text" id="translationInput" placeholder="Enter translation">
-        <button id="submitBtn" onclick="checkTranslation()">Submit</button>
-        <button id="nextBtn" onclick="nextWord()">Next</button>
+        <button id="submitBtn" class="button" onclick="checkTranslation()">Submit</button>
+        <button id="nextBtn" class="button" onclick="nextWord()">Next</button>
         <p id="resultMessage"></p>
     </div>
 
@@ -28,28 +36,31 @@
         let word;
         let translationDirection = "englishToDutch"; // Default translation direction
 
-        // Fetch word data from JSON file with error handling
-        fetch('words.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (data && data.length > 0) {
-                    // Once data is fetched, choose a random word
-                    word = getRandomWord(data);
+        // Function to load word list based on selection
+        function loadWordList() {
+            const selectedList = document.getElementById("wordLists").value;
+            fetch(selectedList)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.length > 0) {
+                        // Once data is fetched, choose a random word
+                        word = getRandomWord(data);
 
-                    // Display the word for translation
-                    displayWordForTranslation();
-                } else {
-                    console.error('No data found in words.json');
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching word data:', error);
-            });
+                        // Display the word for translation
+                        displayWordForTranslation();
+                    } else {
+                        console.error('No data found in selected word list');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching word data:', error);
+                });
+        }
 
         // Function to get a random word based on translation direction
         function getRandomWord(data) {
@@ -84,33 +95,7 @@
 
         // Function to load next word
         function nextWord() {
-            fetch('words.json')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data && data.length > 0) {
-                        // Choose a new random word
-                        word = getRandomWord(data);
-
-                        // Display the new word for translation
-                        displayWordForTranslation();
-
-                        // Clear previous result message
-                        document.getElementById("resultMessage").textContent = "";
-
-                        // Clear input field
-                        document.getElementById("translationInput").value = "";
-                    } else {
-                        console.error('No data found in words.json');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching word data:', error);
-                });
+            loadWordList(); // Reload the word list to fetch a new word
         }
 
         // Event listener for translation direction radio buttons
@@ -118,11 +103,10 @@
             radio.addEventListener('change', updateTranslationDirection);
         });
 
-
         // Function to update translation direction based on radio button selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
-            nextWord(); // Fetch a new word based on the updated translation direction
+            displayWordForTranslation(); // Display the word for translation with the updated direction
         }
     </script>
 </body>
