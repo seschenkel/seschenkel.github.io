@@ -24,38 +24,17 @@
     </div>
 
     <script>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Language Learning</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div id="wordContainer">
-        <h2>Translate the word:</h2>
-        <div>
-            <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
-            <label for="englishToDutch">English to Dutch</label>
-        </div>
-        <div>
-            <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
-            <label for="dutchToEnglish">Dutch to English</label>
-        </div>
-        <p id="wordToTranslate"></p>
-        <input type="text" id="translationInput" placeholder="Enter translation">
-        <button id="submitBtn" onclick="checkTranslation()">Submit</button>
-        <p id="resultMessage"></p>
-    </div>
-
-    <script>
         // Define the word variable outside the fetch block
         let word;
 
-        // Fetch word data from JSON file
+        // Fetch word data from JSON file with error handling
         fetch('words.json')
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 // Once data is fetched, choose a random word
                 word = getRandomWord(data);
@@ -63,7 +42,9 @@
                 // Display the word for translation
                 displayWordForTranslation();
             })
-            .catch(error => console.error('Error fetching word data:', error));
+            .catch(error => {
+                console.error('Error fetching word data:', error);
+            });
 
         // Function to get a random word based on translation direction
         function getRandomWord(data) {
@@ -102,10 +83,6 @@
             translationDirection = document.querySelector('input[name="translationDirection"]:checked').value;
             displayWordForTranslation(); // Display the word for translation with the updated direction
         }
-    </script>
-</body>
-</html>
-
     </script>
 </body>
 </html>
