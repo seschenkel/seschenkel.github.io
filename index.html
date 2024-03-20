@@ -1,7 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div id="wordContainer">
+        <h2>Translate the word:</h2>
+        <p id="wordToTranslate">Thanks</p>
+        <input type="text" id="translationInput" placeholder="Enter translation">
+        <button onclick="checkTranslation()">Submit</button>
+        <p id="resultMessage"></p>
+    </div>
+
+    <script>
+        function checkTranslation() {
+            var userInput = document.getElementById("translationInput").value.trim().toLowerCase();
+            var correctTranslation = "bedankt";
+
+            if (userInput === correctTranslation) {
+                document.getElementById("resultMessage").textContent = "Correct! Well done.";
+            } else {
+                document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
+            }
+        }
+    </script>
 </body>
 </html>
