@@ -94,6 +94,12 @@
             }
         }
 
+        // Function to clear result message and input field
+        function clearFeedback() {
+            document.getElementById("resultMessage").textContent = ""; // Clear feedback text
+            document.getElementById("translationInput").value = ""; // Clear input field
+        }
+
         // Function to load next word
         function nextWord() {
             const selectedList = document.getElementById("wordLists").value;
@@ -113,8 +119,7 @@
                         displayWordForTranslation();
 
                         // Clear previous result message and input field
-                        document.getElementById("resultMessage").textContent = ""; // Clear feedback text
-                        document.getElementById("translationInput").value = ""; // Clear input field
+                        clearFeedback();
                     } else {
                         console.error('No data found in selected word list');
                     }
@@ -123,9 +128,6 @@
                     console.error('Error fetching word data:', error);
                 });
         }
-
-
-
 
         // Event listener for translation direction radio buttons
         document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
