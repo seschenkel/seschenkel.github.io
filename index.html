@@ -110,10 +110,8 @@
                         // Display the new word for translation
                         displayWordForTranslation();
 
-                        // Clear previous result message
-                        document.getElementById("resultMessage").textContent = "";
-
-                        // Clear input field
+                        // Clear previous result message and input field
+                        document.getElementById("resultMessage").textContent = ""; // Clear feedback text
                         document.getElementById("translationInput").value = ""; // Clear input field
                     } else {
                         console.error('No data found in words.json');
@@ -123,6 +121,7 @@
                     console.error('Error fetching word data:', error);
                 });
         }
+
 
 
         // Event listener for translation direction radio buttons
