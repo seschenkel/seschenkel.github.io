@@ -36,3 +36,22 @@ body {
     padding: 10px; /* Add some padding to create space between the border and the text */
     display: inline-block; /* Make the element inline-block to fit the content */
 }
+
+.button {
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    color: white; /* White text */
+    padding: 15px 32px; /* Padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s; /* Animation */
+    cursor: pointer;
+}
+
+/* Change background color of buttons on hover */
+.button:hover {
+    background-color: #45a049;
+}
