@@ -9,6 +9,14 @@
 <body>
     <div id="wordContainer">
         <h2>Translate the word:</h2>
+        <div>
+            <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
+            <label for="englishToDutch">English to Dutch</label>
+        </div>
+        <div>
+            <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
+            <label for="dutchToEnglish">Dutch to English</label>
+        </div>
         <p id="wordToTranslate"></p>
         <input type="text" id="translationInput" placeholder="Enter translation">
         <button id="submitBtn" onclick="checkTranslation()">Submit</button>
@@ -20,24 +28,47 @@
         fetch('words.json')
             .then(response => response.json())
             .then(data => {
-                // Once data is fetched, choose a random word
-                const randomIndex = Math.floor(Math.random() * data.length);
-                const word = data[randomIndex];
-                
-                // Display the English word for translation
-                document.getElementById("wordToTranslate").textContent = word.english;
+                let translationDirection = "englishToDutch"; // Default to English to Dutch
+
+                // Function to update translation direction based on radio button selection
+                function updateTranslationDirection() {
+                    translationDirection = document.querySelector('input[name="translationDirection"]:checked').value;
+                }
+
+                // Function to get a random word based on translation direction
+                function getRandomWord() {
+                    const randomIndex = Math.floor(Math.random() * data.length);
+                    return data[randomIndex];
+                }
+
+                // Function to display a word for translation
+                function displayWordForTranslation() {
+                    const word = getRandomWord();
+                    document.getElementById("wordToTranslate").textContent = (translationDirection === "englishToDutch") ? word.english : word.dutch;
+                }
+
+                // Call displayWordForTranslation initially
+                displayWordForTranslation();
 
                 // Check translation
                 function checkTranslation() {
-                    var userInput = document.getElementById("translationInput").value.trim().toLowerCase();
-                    var correctTranslation = word.dutch.toLowerCase();
+                    const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
+                    const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
 
                     if (userInput === correctTranslation) {
                         document.getElementById("resultMessage").textContent = "Correct! Well done.";
                     } else {
                         document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
                     }
+
+                    // Display a new word for translation after checking
+                    displayWordForTranslation();
                 }
+
+                // Event listener to update translation direction when radio buttons are clicked
+                document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
+                    radio.addEventListener('click', updateTranslationDirection);
+                });
             })
             .catch(error => console.error('Error fetching word data:', error));
     </script>
