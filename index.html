@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Language Learning</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        #wordToTranslate {
+            border: 2px solid #333;
+            padding: 10px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <div id="wordContainer">
@@ -20,6 +26,7 @@
         <p id="wordToTranslate"></p>
         <input type="text" id="translationInput" placeholder="Enter translation">
         <button id="submitBtn" onclick="checkTranslation()">Submit</button>
+        <button id="nextBtn" onclick="nextWord()">Next</button>
         <p id="resultMessage"></p>
     </div>
 
@@ -76,24 +83,37 @@
                 } else {
                     document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
                 }
-
-                // Display a new word for translation after checking
-                word = getRandomWord(data);
-                displayWordForTranslation();
             } else {
                 console.error("Word is undefined or null");
             }
         }
 
-        // Event listener to update translation direction when radio buttons are clicked
-        document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
-            radio.addEventListener('click', updateTranslationDirection);
-        });
+        // Function to load next word
+        function nextWord() {
+            fetch('words.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.length > 0) {
+                        // Choose a new random word
+                        word = getRandomWord(data);
 
-        // Function to update translation direction based on radio button selection
-        function updateTranslationDirection() {
-            translationDirection = document.querySelector('input[name="translationDirection"]:checked').value;
-            displayWordForTranslation(); // Display the word for translation with the updated direction
+                        // Display the new word for translation
+                        displayWordForTranslation();
+
+                        // Clear previous result message
+                        document.getElementById("resultMessage").textContent = "";
+                    } else {
+                        console.error('No data found in words.json');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching word data:', error);
+                });
         }
     </script>
 </body>
