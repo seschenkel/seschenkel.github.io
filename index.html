@@ -101,6 +101,9 @@
 
                         // Clear previous result message
                         document.getElementById("resultMessage").textContent = "";
+
+                        // Clear input field
+                        document.getElementById("translationInput").value = "";
                     } else {
                         console.error('No data found in words.json');
                     }
@@ -109,7 +112,6 @@
                     console.error('Error fetching word data:', error);
                 });
         }
-
         // Event listener for Enter key press in the translation input field
         document.getElementById("translationInput").addEventListener("keypress", function(event) {
             if (event.keyCode === 13) {
