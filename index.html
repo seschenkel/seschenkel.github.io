@@ -9,23 +9,37 @@
 <body>
     <div id="wordContainer">
         <h2>Translate the word:</h2>
-        <p id="wordToTranslate">Thanks</p>
+        <p id="wordToTranslate"></p>
         <input type="text" id="translationInput" placeholder="Enter translation">
         <button id="submitBtn" onclick="checkTranslation()">Submit</button>
         <p id="resultMessage"></p>
     </div>
 
     <script>
-        function checkTranslation() {
-            var userInput = document.getElementById("translationInput").value.trim().toLowerCase();
-            var correctTranslation = "bedankt";
+        // Fetch word data from JSON file
+        fetch('words.json')
+            .then(response => response.json())
+            .then(data => {
+                // Once data is fetched, choose a random word
+                const randomIndex = Math.floor(Math.random() * data.length);
+                const word = data[randomIndex];
+                
+                // Display the English word for translation
+                document.getElementById("wordToTranslate").textContent = word.english;
 
-            if (userInput === correctTranslation) {
-                document.getElementById("resultMessage").textContent = "Correct! Well done.";
-            } else {
-                document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
-            }
-        }
+                // Check translation
+                function checkTranslation() {
+                    var userInput = document.getElementById("translationInput").value.trim().toLowerCase();
+                    var correctTranslation = word.dutch.toLowerCase();
+
+                    if (userInput === correctTranslation) {
+                        document.getElementById("resultMessage").textContent = "Correct! Well done.";
+                    } else {
+                        document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
+                    }
+                }
+            })
+            .catch(error => console.error('Error fetching word data:', error));
     </script>
 </body>
 </html>
