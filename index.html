@@ -118,10 +118,11 @@
             radio.addEventListener('change', updateTranslationDirection);
         });
 
+
         // Function to update translation direction based on radio button selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
-            displayWordForTranslation(); // Display the word for translation with the updated direction
+            nextWord(); // Fetch a new word based on the updated translation direction
         }
     </script>
 </body>
