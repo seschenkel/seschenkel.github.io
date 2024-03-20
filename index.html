@@ -109,6 +109,13 @@
                     console.error('Error fetching word data:', error);
                 });
         }
+
+        // Event listener for Enter key press in the translation input field
+        document.getElementById("translationInput").addEventListener("keypress", function(event) {
+            if (event.keyCode === 13) {
+                checkTranslation(); // Submit the answer if Enter key is pressed
+            }
+        });
     </script>
 </body>
 </html>
