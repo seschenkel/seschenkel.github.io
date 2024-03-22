@@ -1,0 +1,12 @@
+[
+    { "french": "bonjour", "dutch": "hallo" },
+    { "french": "au revoir", "dutch": "vaarwel" },
+    { "french": "s'il vous plaît", "dutch": "alstublieft" },
+    { "french": "merci", "dutch": "dank je" },
+    { "french": "oui", "dutch": "ja" },
+    { "french": "non", "dutch": "nee" },
+    { "french": "désolé", "dutch": "sorry" },
+    { "french": "excusez-moi", "dutch": "pardon" },
+    { "french": "comment ça va?", "dutch": "hoe gaat het met je?" },
+    { "french": "ça va bien", "dutch": "met mij gaat het goed" }
+]
