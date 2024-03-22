@@ -39,7 +39,7 @@
         let translationDirection = "englishToDutch"; // Default translation direction
         let isAnswerSubmitted = false; // Flag to track if an answer is submitted
         let correctAnswers = 0; // Counter for correct answers on the first attempt
-        let totalWords = 0; // Total number of words in the current word list
+        let totalAttempts = 0; // Total number of attempts
 
         // Function to load word list based on selection
         function loadWordList() {
@@ -53,11 +53,7 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
-                        totalWords = data.length; // Update totalWords with the length of the new word list
-                        resetCounter(); // Reset the counter when loading a new word list
                         word = getRandomWord(data);
-
-                        // Display the word for translation
                         displayWordForTranslation();
                     } else {
                         console.error('No data found in selected word list');
@@ -71,12 +67,13 @@
         // Function to reset the correct answers counter
         function resetCounter() {
             correctAnswers = 0;
-            updateCounter(); // Update the counter display
+            totalAttempts = 0;
+            updateCounter();
         }
 
         // Function to update the counter display
         function updateCounter() {
-            document.getElementById("counter").textContent = `${correctAnswers} / ${totalWords}`;
+            document.getElementById("counter").textContent = `${correctAnswers} / ${totalAttempts}`;
         }
 
         // Function to get a random word based on translation direction
@@ -102,14 +99,12 @@
 
                 if (userInput === correctTranslation) {
                     if (!isAnswerSubmitted) {
-                        correctAnswers++; // Increment correctAnswers only if it's the first attempt
-                        updateCounter(); // Update the counter display
+                        correctAnswers++;
                     }
-                    document.getElementById("resultMessage").textContent = "Juist! Goed gedaan.";
-                    isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
-                } else {
-                    document.getElementById("resultMessage").textContent = "Helaas, niet goed. Probeer nog eens.";
+                    isAnswerSubmitted = true;
                 }
+                totalAttempts++;
+                updateCounter();
             } else {
                 console.error("Word is undefined or null");
             }
@@ -117,9 +112,9 @@
 
         // Function to clear result message and input field
         function clearFeedback() {
-            document.getElementById("resultMessage").textContent = ""; // Clear feedback text
-            document.getElementById("translationInput").value = ""; // Clear input field
-            isAnswerSubmitted = false; // Reset isAnswerSubmitted flag
+            document.getElementById("resultMessage").textContent = "";
+            document.getElementById("translationInput").value = "";
+            isAnswerSubmitted = false;
         }
 
         // Function to load next word
@@ -144,8 +139,6 @@
                 .catch(error => {
                     console.error('Error fetching word data:', error);
                 });
-            
-            isAnswerSubmitted = false; // Reset isAnswerSubmitted to false after loading next word
         }
 
         // Event listener for translation direction radio buttons
@@ -156,8 +149,9 @@
         // Function to update translation direction based on radio button selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
-            loadWordList(); // Fetch new word list
-            displayWordForTranslation(); // Display the word for translation with the updated direction
+            loadWordList();
+            displayWordForTranslation();
+            resetCounter();
         }
     </script>
 </body>
