@@ -31,12 +31,15 @@
         <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Dit is het!</button>
         <p id="resultMessage"></p>
         <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Volgend woord</button>
+        <p id="counter" class="counter">0 / 0</p>
     </div>
 
     <script>
         let word;
         let translationDirection = "englishToDutch"; // Default translation direction
-        let isAnswerSubmitted = false; // Add this line near the top of your script
+        let isAnswerSubmitted = false; // Flag to track if an answer is submitted
+        let correctAnswers = 0; // Counter for correct answers on the first attempt
+        let totalWords = 0; // Total number of words in the current word list
 
         // Function to load word list based on selection
         function loadWordList() {
@@ -50,7 +53,8 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
-                        // Once data is fetched, choose a random word
+                        totalWords = data.length; // Update totalWords with the length of the new word list
+                        resetCounter(); // Reset the counter when loading a new word list
                         word = getRandomWord(data);
 
                         // Display the word for translation
@@ -62,6 +66,17 @@
                 .catch(error => {
                     console.error('Error fetching word data:', error);
                 });
+        }
+
+        // Function to reset the correct answers counter
+        function resetCounter() {
+            correctAnswers = 0;
+            updateCounter(); // Update the counter display
+        }
+
+        // Function to update the counter display
+        function updateCounter() {
+            document.getElementById("counter").textContent = `${correctAnswers} / ${totalWords}`;
         }
 
         // Function to get a random word based on translation direction
@@ -86,6 +101,10 @@
                 const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
 
                 if (userInput === correctTranslation) {
+                    if (!isAnswerSubmitted) {
+                        correctAnswers++; // Increment correctAnswers only if it's the first attempt
+                        updateCounter(); // Update the counter display
+                    }
                     document.getElementById("resultMessage").textContent = "Juist! Goed gedaan.";
                     isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
                 } else {
@@ -100,14 +119,12 @@
         function clearFeedback() {
             document.getElementById("resultMessage").textContent = ""; // Clear feedback text
             document.getElementById("translationInput").value = ""; // Clear input field
+            isAnswerSubmitted = false; // Reset isAnswerSubmitted flag
         }
 
         // Function to load next word
         function nextWord() {
-            if (!isAnswerSubmitted) {
-                document.getElementById("resultMessage").textContent = "Je kan pas door als je het goede antwoord hebt gegeven.";
-                return; // If not, return early from this function
-            }
+            clearFeedback();
             const selectedList = document.getElementById("wordLists").value;
             fetch(selectedList)
                 .then(response => {
@@ -118,14 +135,8 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
-                        // Choose a new random word
                         word = getRandomWord(data);
-
-                        // Display the new word for translation
                         displayWordForTranslation();
-
-                        // Clear previous result message and input field
-                        clearFeedback();
                     } else {
                         console.error('No data found in selected word list');
                     }
@@ -145,7 +156,7 @@
         // Function to update translation direction based on radio button selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
-            loadWordList(); // Fetch new word
+            loadWordList(); // Fetch new word list
             displayWordForTranslation(); // Display the word for translation with the updated direction
         }
     </script>
