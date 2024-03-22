@@ -19,12 +19,12 @@
             </select>
         </div>
         <div class="dropdown-container">
-            <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
-            <label for="englishToDutch">Engels-Nederlands</label>
+            <input type="radio" id="translationOption1" name="translationOption" value="option1" checked>
+            <label for="translationOption1" id="translationLabel1"></label>
         </div>
         <div class="dropdown-container">
-            <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
-            <label for="dutchToEnglish">Nederlands-Engels</label>
+            <input type="radio" id="translationOption2" name="translationOption" value="option2">
+            <label for="translationOption2" id="translationLabel2"></label>
         </div>
         <p id="wordToTranslate"></p>
         <input type="text" id="translationInput" class="dropdown-button" placeholder="Enter translation">
@@ -36,7 +36,8 @@
 
     <script>
         let word;
-        let translationDirection = "englishToDutch"; // Default translation direction
+        let translationOptions = []; // Array to store translation options
+        let translationDirection; // Translation direction based on user selection
         let isAnswerSubmitted = false; // Flag to track if an answer is submitted
         let correctAnswers = 0; // Counter for correct answers on the first attempt
         let totalAttempts = 0; // Total number of attempts
@@ -54,6 +55,8 @@
                 .then(data => {
                     if (data && data.length > 0) {
                         word = getRandomWord(data);
+                        translationOptions = getTranslationOptions(word);
+                        displayTranslationOptions();
                         displayWordForTranslation();
                     } else {
                         console.error('No data found in selected word list');
@@ -64,28 +67,31 @@
                 });
         }
 
-        // Function to reset the correct answers counter
-        function resetCounter() {
-            correctAnswers = 0;
-            totalAttempts = 0;
-            updateCounter();
-        }
-
-        // Function to update the counter display
-        function updateCounter() {
-            document.getElementById("counter").textContent = `${correctAnswers} / ${totalAttempts}`;
-        }
-
         // Function to get a random word based on translation direction
         function getRandomWord(data) {
             const randomIndex = Math.floor(Math.random() * data.length);
             return data[randomIndex];
         }
 
+        // Function to get translation options from the word object
+        function getTranslationOptions(word) {
+            return Object.keys(word).filter(key => key !== 'id');
+        }
+
+        // Function to display translation options
+        function displayTranslationOptions() {
+            translationOptions.forEach((option, index) => {
+                const radioBtn = document.getElementById(`translationOption${index + 1}`);
+                const label = document.getElementById(`translationLabel${index + 1}`);
+                radioBtn.value = option;
+                label.textContent = option;
+            });
+        }
+
         // Function to display a word for translation
         function displayWordForTranslation() {
             if (word) {
-                document.getElementById("wordToTranslate").textContent = (translationDirection === "englishToDutch") ? word.english : word.dutch;
+                document.getElementById("wordToTranslate").textContent = word[translationOptions[0]];
             } else {
                 console.error("Word is undefined or null");
             }
@@ -95,7 +101,7 @@
         function checkTranslation() {
             const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
             if (word) {
-                const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
+                const correctTranslation = word[translationOptions[1]].toLowerCase();
 
                 if (userInput === correctTranslation) {
                     if (!isAnswerSubmitted) {
@@ -108,6 +114,11 @@
             } else {
                 console.error("Word is undefined or null");
             }
+        }
+
+        // Function to update the counter display
+        function updateCounter() {
+            document.getElementById("counter").textContent = `${correctAnswers} / ${totalAttempts}`;
         }
 
         // Function to clear result message and input field
@@ -131,6 +142,8 @@
                 .then(data => {
                     if (data && data.length > 0) {
                         word = getRandomWord(data);
+                        translationOptions = getTranslationOptions(word);
+                        displayTranslationOptions();
                         displayWordForTranslation();
                     } else {
                         console.error('No data found in selected word list');
@@ -142,17 +155,18 @@
         }
 
         // Event listener for translation direction radio buttons
-        document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
+        document.querySelectorAll('input[name="translationOption"]').forEach(radio => {
             radio.addEventListener('change', updateTranslationDirection);
         });
 
         // Function to update translation direction based on radio button selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
-            loadWordList();
             displayWordForTranslation();
-            resetCounter();
         }
+
+        // Call loadWordList initially
+        loadWordList();
     </script>
 </body>
 </html>
