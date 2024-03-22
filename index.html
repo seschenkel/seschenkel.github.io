@@ -7,29 +7,29 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="wordContainer">
+    <div id="wordContainer" class="container">
         <h2>Translate the word:</h2>
-        <div>
+        <div class="dropdown-container">
             <label for="wordLists">Choose a word list:</label>
-            <select id="wordLists" onchange="loadWordList()">
+            <select id="wordLists" class="dropdown-button" onchange="loadWordList()">
                 <option value="words1.json">Word List 1</option>
                 <option value="words2.json">Word List 2</option>
                 <option value="samual_maart_2024.json">Lijst Samuel</option>
                 <!-- Add more options for different word lists -->
             </select>
         </div>
-        <div>
+        <div class="dropdown-container">
             <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
             <label for="englishToDutch">English to Dutch</label>
         </div>
-        <div>
+        <div class="dropdown-container">
             <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
             <label for="dutchToEnglish">Dutch to English</label>
         </div>
         <p id="wordToTranslate"></p>
-        <input type="text" id="translationInput" placeholder="Enter translation">
-        <button id="submitBtn" class="button" onclick="checkTranslation()">Submit</button>
-        <button id="nextBtn" class="button" onclick="nextWord()">Next</button>
+        <input type="text" id="translationInput" class="dropdown-button" placeholder="Enter translation">
+        <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Submit</button>
+        <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Next</button>
         <p id="resultMessage"></p>
     </div>
 
