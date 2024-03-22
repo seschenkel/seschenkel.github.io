@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="wordContainer" class="container">
-        <h2>Bertaal het volgende woord:</h2>
+        <h2>Vertaal het volgende woord:</h2>
         <div class="dropdown-container">
             <label for="wordLists">Kies hier je woordenlijst:</label>
             <select id="wordLists" class="dropdown-button" onchange="loadWordList()">
@@ -105,7 +105,7 @@
         // Function to load next word
         function nextWord() {
             if (!isAnswerSubmitted) {
-                document.getElementById("resultMessage").textContent = "Please submit an answer before proceeding to the next word.";
+                document.getElementById("resultMessage").textContent = "Je kan pas door als je het goede antwoord hebt gegeven.";
                 return; // If not, return early from this function
             }
             const selectedList = document.getElementById("wordLists").value;
