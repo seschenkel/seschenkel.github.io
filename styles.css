@@ -13,7 +13,7 @@ html, body, ul {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #fff; /* White background */
     color: #333;
     padding: 20px;
 }
@@ -25,9 +25,10 @@ body {
 }
 
 /* Header styles */
-h1 {
+h2 {
     text-align: center;
     margin-bottom: 20px;
+    color: #004d98; /* FC Barcelona blue */
 }
 
 /* Dropdown styles */
@@ -42,51 +43,29 @@ h1 {
 .dropdown-button {
     appearance: none; /* Remove default appearance */
     -webkit-appearance: none; /* Remove default appearance for WebKit browsers */
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #004d98; /* FC Barcelona blue */
+    color: #fff; /* White text color */
+    border: none;
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
     width: 100%;
     cursor: pointer;
-    text-align: left;
-}
-
-/* Style the dropdown arrow */
-.dropdown-arrow {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-top: 6px solid #555;
+    text-align: center;
 }
 
 /* Style the dropdown options */
 .dropdown-options {
     display: none;
     position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #fff; /* White background */
+    border: 1px solid #004d98; /* FC Barcelona blue border */
     border-radius: 5px;
     padding: 10px;
     width: calc(100% - 22px); /* Account for border and padding */
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000; /* Ensure dropdown is above other elements */
-}
-
-/* Style the dropdown options on hover */
-.dropdown-options:hover {
-    cursor: pointer;
-}
-
-/* Show dropdown options when dropdown button is clicked */
-.dropdown-container.open .dropdown-options {
-    display: block;
 }
 
 /* Style the dropdown options list */
@@ -99,9 +78,36 @@ h1 {
 /* Style the dropdown option items */
 .dropdown-options li {
     padding: 5px 0;
+    text-align: center;
+    color: #333; /* Dark text color */
 }
 
 /* Style the dropdown option items on hover */
 .dropdown-options li:hover {
-    background-color: #f0f0f0;
+    background-color: #e6e6e6; /* Light gray background on hover */
+}
+
+/* Show dropdown options when dropdown button is clicked */
+.dropdown-container.open .dropdown-options {
+    display: block;
+}
+
+/* Button styles */
+.button {
+    background-color: #004d98; /* FC Barcelona blue */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 200px; /* Adjust button width for mobile */
+}
+
+/* Button styles on hover */
+.button:hover {
+    background-color: #002450; /* Darker shade of FC Barcelona blue on hover */
 }
