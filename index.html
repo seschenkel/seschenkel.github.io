@@ -137,6 +137,7 @@
         // Function to update translation direction based on radio button selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
+            loadWordList(); // Fetch new word
             displayWordForTranslation(); // Display the word for translation with the updated direction
         }
     </script>
