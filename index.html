@@ -36,6 +36,7 @@
     <script>
         let word;
         let translationDirection = "englishToDutch"; // Default translation direction
+        let isAnswerSubmitted = false; // Add this line near the top of your script
 
         // Function to load word list based on selection
         function loadWordList() {
@@ -86,6 +87,7 @@
 
                 if (userInput === correctTranslation) {
                     document.getElementById("resultMessage").textContent = "Correct! Well done.";
+                    isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
                 } else {
                     document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
                 }
@@ -102,6 +104,10 @@
 
         // Function to load next word
         function nextWord() {
+            if (!isAnswerSubmitted) {
+                document.getElementById("resultMessage").textContent = "Please submit an answer before proceeding to the next word.";
+                return; // If not, return early from this function
+            }
             const selectedList = document.getElementById("wordLists").value;
             fetch(selectedList)
                 .then(response => {
@@ -127,6 +133,8 @@
                 .catch(error => {
                     console.error('Error fetching word data:', error);
                 });
+            
+            isAnswerSubmitted = false; // Reset isAnswerSubmitted to false after loading next word
         }
 
         // Event listener for translation direction radio buttons
