@@ -116,6 +116,7 @@ h2 {
 #translationInput {
     background-color: #fff; /* White background */
     border: 1px solid #ccc; /* Light gray border */
+    color: #000000; /* Black text color */
     border-radius: 5px;
     padding: 10px;
     font-size: 16px;
