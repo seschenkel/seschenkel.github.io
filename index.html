@@ -8,39 +8,37 @@
 </head>
 <body>
     <div id="wordContainer" class="container">
-        <h2>Vertaal het volgende woord:</h2>
+        <h2>Translate the word:</h2>
         <div class="dropdown-container">
-            <label for="wordLists">Kies hier je woordenlijst:</label>
+            <label for="wordLists">Choose a word list:</label>
             <select id="wordLists" class="dropdown-button" onchange="loadWordList()">
-                <option value="English_Test.json">Test lijst Engels</option>
-                <option value="French_Test.json">Test Lijst Frans</option>
+                <option value="words1.json">Word List 1</option>
+                <option value="words2.json">Word List 2</option>
                 <option value="samual_maart_2024.json">Lijst Samuel</option>
+                <option value="french_to_dutch.json">French to Dutch</option>
                 <!-- Add more options for different word lists -->
             </select>
         </div>
         <div class="dropdown-container">
-            <input type="radio" id="translationOption1" name="translationOption" value="option1" checked>
-            <label for="translationOption1" id="translationLabel1"></label>
+            <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
+            <label for="englishToDutch">English to Dutch</label>
         </div>
         <div class="dropdown-container">
-            <input type="radio" id="translationOption2" name="translationOption" value="option2">
-            <label for="translationOption2" id="translationLabel2"></label>
+            <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
+            <label for="dutchToEnglish">Dutch to English</label>
         </div>
         <p id="wordToTranslate"></p>
         <input type="text" id="translationInput" class="dropdown-button" placeholder="Enter translation">
-        <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Dit is het!</button>
+        <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Submit</button>
         <p id="resultMessage"></p>
-        <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Volgend woord</button>
-        <p id="counter" class="counter">0 / 0</p>
+        <p id="answerCounter"></p> <!-- Counter for correct answers in the first attempt -->
+        <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Next</button>
     </div>
 
     <script>
         let word;
-        let translationOptions = []; // Array to store translation options
-        let translationDirection; // Translation direction based on user selection
+        let translationDirection = "englishToDutch"; // Default translation direction
         let isAnswerSubmitted = false; // Flag to track if an answer is submitted
-        let correctAnswers = 0; // Counter for correct answers on the first attempt
-        let totalAttempts = 0; // Total number of attempts
 
         // Function to load word list based on selection
         function loadWordList() {
@@ -54,9 +52,10 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
+                        // Once data is fetched, choose a random word
                         word = getRandomWord(data);
-                        translationOptions = getTranslationOptions(word);
-                        displayTranslationOptions();
+
+                        // Display the word for translation
                         displayWordForTranslation();
                     } else {
                         console.error('No data found in selected word list');
@@ -73,25 +72,12 @@
             return data[randomIndex];
         }
 
-        // Function to get translation options from the word object
-        function getTranslationOptions(word) {
-            return Object.keys(word).filter(key => key !== 'id');
-        }
-
-        // Function to display translation options
-        function displayTranslationOptions() {
-            translationOptions.forEach((option, index) => {
-                const radioBtn = document.getElementById(`translationOption${index + 1}`);
-                const label = document.getElementById(`translationLabel${index + 1}`);
-                radioBtn.value = option;
-                label.textContent = option;
-            });
-        }
-
         // Function to display a word for translation
         function displayWordForTranslation() {
             if (word) {
-                document.getElementById("wordToTranslate").textContent = word[translationOptions[0]];
+                const selectedRadio = document.querySelector('input[name="translationDirection"]:checked');
+                const direction = selectedRadio ? selectedRadio.value : "englishToDutch";
+                document.getElementById("wordToTranslate").textContent = (direction === "englishToDutch") ? word.english : word.dutch;
             } else {
                 console.error("Word is undefined or null");
             }
@@ -101,36 +87,31 @@
         function checkTranslation() {
             const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
             if (word) {
-                const correctTranslation = word[translationOptions[1]].toLowerCase();
+                const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
 
                 if (userInput === correctTranslation) {
-                    if (!isAnswerSubmitted) {
-                        correctAnswers++;
-                    }
-                    isAnswerSubmitted = true;
+                    document.getElementById("resultMessage").textContent = "Correct! Well done.";
+                    isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
+                } else {
+                    document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
                 }
-                totalAttempts++;
-                updateCounter();
             } else {
                 console.error("Word is undefined or null");
             }
         }
 
-        // Function to update the counter display
-        function updateCounter() {
-            document.getElementById("counter").textContent = `${correctAnswers} / ${totalAttempts}`;
-        }
-
         // Function to clear result message and input field
         function clearFeedback() {
-            document.getElementById("resultMessage").textContent = "";
-            document.getElementById("translationInput").value = "";
-            isAnswerSubmitted = false;
+            document.getElementById("resultMessage").textContent = ""; // Clear feedback text
+            document.getElementById("translationInput").value = ""; // Clear input field
         }
 
         // Function to load next word
         function nextWord() {
-            clearFeedback();
+            if (!isAnswerSubmitted) {
+                document.getElementById("resultMessage").textContent = "You can proceed only after providing the correct answer.";
+                return; // If not, return early from this function
+            }
             const selectedList = document.getElementById("wordLists").value;
             fetch(selectedList)
                 .then(response => {
@@ -141,10 +122,14 @@
                 })
                 .then(data => {
                     if (data && data.length > 0) {
+                        // Choose a new random word
                         word = getRandomWord(data);
-                        translationOptions = getTranslationOptions(word);
-                        displayTranslationOptions();
+
+                        // Display the new word for translation
                         displayWordForTranslation();
+
+                        // Clear previous result message and input field
+                        clearFeedback();
                     } else {
                         console.error('No data found in selected word list');
                     }
@@ -152,21 +137,21 @@
                 .catch(error => {
                     console.error('Error fetching word data:', error);
                 });
+            
+            isAnswerSubmitted = false; // Reset isAnswerSubmitted to false after loading next word
         }
 
         // Event listener for translation direction radio buttons
-        document.querySelectorAll('input[name="translationOption"]').forEach(radio => {
+        document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
             radio.addEventListener('change', updateTranslationDirection);
         });
 
         // Function to update translation direction based on radio button selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
-            displayWordForTranslation();
+            loadWordList(); // Fetch new word
+            displayWordForTranslation(); // Display the word for translation with the updated direction
         }
-
-        // Call loadWordList initially
-        loadWordList();
     </script>
 </body>
 </html>
