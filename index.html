@@ -8,9 +8,9 @@
 </head>
 <body>
     <div id="wordContainer" class="container">
-        <h2>Translate the word:</h2>
+        <h2>Bertaal het volgende woord:</h2>
         <div class="dropdown-container">
-            <label for="wordLists">Choose a word list:</label>
+            <label for="wordLists">Kies hier je woordenlijst:</label>
             <select id="wordLists" class="dropdown-button" onchange="loadWordList()">
                 <option value="words1.json">Word List 1</option>
                 <option value="words2.json">Word List 2</option>
@@ -20,17 +20,17 @@
         </div>
         <div class="dropdown-container">
             <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
-            <label for="englishToDutch">English to Dutch</label>
+            <label for="englishToDutch">Engels-Nederlands</label>
         </div>
         <div class="dropdown-container">
             <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
-            <label for="dutchToEnglish">Dutch to English</label>
+            <label for="dutchToEnglish">Nederlands-Engels</label>
         </div>
         <p id="wordToTranslate"></p>
         <input type="text" id="translationInput" class="dropdown-button" placeholder="Enter translation">
-        <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Submit</button>
+        <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Dit is het!</button>
         <p id="resultMessage"></p>
-        <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Next</button>
+        <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Volgend woord</button>
     </div>
 
     <script>
@@ -86,10 +86,10 @@
                 const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
 
                 if (userInput === correctTranslation) {
-                    document.getElementById("resultMessage").textContent = "Correct! Well done.";
+                    document.getElementById("resultMessage").textContent = "Juist! Goed gedaan.";
                     isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
                 } else {
-                    document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
+                    document.getElementById("resultMessage").textContent = "Helaas, niet goed. Probeer nog eens.";
                 }
             } else {
                 console.error("Word is undefined or null");
