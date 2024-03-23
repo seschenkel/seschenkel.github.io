@@ -16,12 +16,15 @@ body {
     background-color: #fff; /* White background */
     color: #333;
     padding: 20px;
+    display: flex; /* Align items to center */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Ensure full height */
 }
 
 /* Container styles */
 .container {
     max-width: 600px;
-    margin: 0 auto;
 }
 
 /* Header styles */
@@ -34,7 +37,6 @@ h2 {
 /* Dropdown styles */
 /* Style the dropdown container */
 .dropdown-container {
-    position: relative;
     width: 100%;
     margin-bottom: 20px;
 }
