@@ -107,12 +107,14 @@
                     document.getElementById("resultMessage").textContent = "Helemaal goed!";
                     isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
                 } else {
-                    document.getElementById("resultMessage").textContent = "Helaas, dat is niet helemaal goed";
+                    // If the answer is wrong, display the correct answer
+                    document.getElementById("resultMessage").textContent = "Helaas, dat is niet helemaal goed. Het correcte antwoord is: " + correctTranslation;
                 }
             } else {
                 console.error("Word is undefined or null");
             }
         }
+
 
         // Function to clear result message and input field
         function clearFeedback() {
@@ -122,10 +124,6 @@
 
         // Function to load next word
         function nextWord() {
-            if (!isAnswerSubmitted) {
-                document.getElementById("resultMessage").textContent = "You can proceed only after providing the correct answer.";
-                return; // If not, return early from this function
-            }
             const selectedList = document.getElementById("wordLists").value;
             fetch(selectedList)
                 .then(response => {
@@ -160,10 +158,9 @@
             radio.addEventListener('change', updateTranslationDirection);
         });
 
-        // Function to update translation direction based on radio button selection
+        // Function to update translation direction based on dropdown selection
         function updateTranslationDirection(event) {
             translationDirection = event.target.value;
-            loadWordList(); // Fetch new word
             displayWordForTranslation(); // Display the word for translation with the updated direction
         }
 
