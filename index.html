@@ -96,7 +96,12 @@
         }
 
         // Function to check translation
-        function checkTranslation() {
+        function checkTranslation(event) {
+            if (event.key === 'Enter') {
+                nextWord(); // Trigger nextWord function if Enter key is pressed
+                return;
+            }
+
             const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
             if (word) {
                 const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
@@ -114,6 +119,7 @@
                 console.error("Word is undefined or null");
             }
         }
+
 
 
         // Function to clear result message and input field
