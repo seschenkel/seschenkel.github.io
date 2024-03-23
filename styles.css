@@ -110,7 +110,7 @@ main {
 }
 
 /* Button styles */
-.button {
+.button, #nextBtn {
     background-color: #004d98; /* FC Barcelona blue */
     color: #fff; /* White text color */
     border: none;
@@ -125,7 +125,7 @@ main {
 }
 
 /* Button styles on hover */
-.button:hover {
+.button:hover, #nextBtn:hover {
     background-color: #002450; /* Darker shade of FC Barcelona blue on hover */
 }
 
