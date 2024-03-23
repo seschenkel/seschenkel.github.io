@@ -23,7 +23,7 @@
             </div>
             <div id="translationDirectionContainer" class="dropdown-container" style="display: none;">
                 <label for="translationDirection">Kies de vertaalrichting:</label>
-                <select id="translationDirection" class="dropdown-button">
+                <select id="translationDirection" class="dropdown-button" onchange="updateTranslationDirection()">
                     <option value="englishToDutch">Engels-Nederlands</option>
                     <option value="dutchToEnglish">Nederlands-Engels</option>
                 </select>
@@ -88,9 +88,8 @@
         // Function to display a word for translation
         function displayWordForTranslation() {
             if (word) {
-                const selectedRadio = document.querySelector('input[name="translationDirection"]:checked');
-                const direction = selectedRadio ? selectedRadio.value : "englishToDutch";
-                document.getElementById("wordToTranslate").textContent = (direction === "englishToDutch") ? word.english : word.dutch;
+                const selectedDirection = document.getElementById("translationDirection").value;
+                document.getElementById("wordToTranslate").textContent = (selectedDirection === "englishToDutch") ? word.english : word.dutch;
             } else {
                 console.error("Word is undefined or null");
             }
@@ -125,55 +124,46 @@
 
         // Function to load next word
         function nextWord() {
-            const selectedList = document.getElementById("wordLists").value;
+            const selectedList = document.getElementById("wordLists").value
             fetch(selectedList)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data && data.length > 0) {
-                        // Choose a new random word
-                        word = getRandomWord(data);
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data && data.length > 0) {
+                            // Choose a new random word
+                            word = getRandomWord(data);
 
-                        // Display the new word for translation
-                        displayWordForTranslation();
+                            // Display the new word for translation
+                            displayWordForTranslation();
 
-                        // Clear previous result message and input field
-                        clearFeedback();
+                            // Clear previous result message and input field
+                            clearFeedback();
 
-                        // Hide the "Next" button
-                        document.getElementById("nextBtn").style.display = "none";
-                    } else {
-                        console.error('No data found in selected word list');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching word data:', error);
-                });
-            
+                            // Hide the "Next" button
+                            document.getElementById("nextBtn").style.display = "none";
+                        } else {
+                            console.error('No data found in selected word list');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching word data:', error);
+                    });
+
             isAnswerSubmitted = false; // Reset isAnswerSubmitted to false after loading next word
         }
 
-        // Event listener for translation direction radio buttons
-        document.querySelectorAll('input[name="translationDirection"]').forEach(radio => {
-            radio.addEventListener('change', updateTranslationDirection);
-        });
-
         // Function to update translation direction based on dropdown selection
-        function updateTranslationDirection(event) {
-            translationDirection = event.target.value;
-            displayWordForTranslation(); // Display the word for translation with the updated direction
+        function updateTranslationDirection() {
+            translationDirection = document.getElementById("translationDirection").value;
+            displayWordForTranslation();
         }
 
-// Event listener for translation direction dropdown
-document.getElementById('translationDirection').addEventListener('change', function() {
-    translationDirection = this.value;
-    displayWordForTranslation();
-});
-</script>
+        // Event listener for translation direction dropdown
+        document.getElementById('translationDirection').addEventListener('change', updateTranslationDirection);
+    </script>
 </body>
 </html>
-
