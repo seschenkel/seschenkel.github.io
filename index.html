@@ -160,6 +160,7 @@
             translationDirection = event.target.value;
             loadWordList(); // Load a new word list when the translation direction is changed
             clearFeedback(); // Clear previous result message and input field
+            displayWordForTranslation(); // Display the word for translation with the updated direction
         }
 
         // Event listener for translation input
