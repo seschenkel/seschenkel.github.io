@@ -34,7 +34,7 @@
             <input type="text" id="translationInput" class="dropdown-button" placeholder="Enter translation" aria-label="Translation input">
             <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Ok</button>
             <p id="resultMessage" aria-live="assertive"></p>
-            <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Volgend woord</button>
+            <button id="nextBtn" class="button dropdown-button" style="display:none;" onclick="nextWord()">Volgend woord</button>
             <div id="correctAnswers" aria-live="polite"></div>
         </div>
     </main>
@@ -106,9 +106,11 @@
                 if (userInput === correctTranslation) {
                     document.getElementById("resultMessage").textContent = "Helemaal goed!";
                     isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
+                    document.getElementById("nextBtn").style.display = "inline-block"; // Show the "Next" button
                 } else {
                     // If the answer is wrong, display the correct answer
                     document.getElementById("resultMessage").textContent = "Helaas, dat is niet helemaal goed. Het correcte antwoord is: " + correctTranslation;
+                    document.getElementById("nextBtn").style.display = "none"; // Hide the "Next" button
                 }
             } else {
                 console.error("Word is undefined or null");
