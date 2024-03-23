@@ -143,6 +143,9 @@
 
                         // Clear previous result message and input field
                         clearFeedback();
+
+                        // Hide the "Next" button
+                        document.getElementById("nextBtn").style.display = "none";
                     } else {
                         console.error('No data found in selected word list');
                     }
