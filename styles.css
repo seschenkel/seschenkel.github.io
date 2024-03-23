@@ -15,10 +15,9 @@ body {
     line-height: 1.6;
     background-color: #fff; /* White background */
     color: #333;
-    padding: 20px;
     display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Arrange items in a column */
+    justify-content: space-between; /* Align items with space between */
     min-height: 100vh; /* Ensure full height */
 }
 
@@ -28,10 +27,26 @@ body {
 }
 
 /* Header styles */
-h2 {
+header {
     text-align: center;
-    margin-bottom: 20px;
-    color: #004d98; /* FC Barcelona blue */
+    padding: 20px;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Main content styles */
+main {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Dropdown styles */
