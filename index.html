@@ -8,11 +8,10 @@
 </head>
 <body>
     <header>
-        <h1>Language Learning</h1>
+        <h1>Zelf je kennis testen!</h1>
     </header>
     <main>
         <div id="wordContainer" class="container">
-            <h2>Vertaal het volgende woord:</h2>
             <div class="dropdown-container">
                 <label for="wordLists">Kies hier je woordenlijst:</label>
                 <select id="wordLists" class="dropdown-button" onchange="loadWordList()">
@@ -30,16 +29,17 @@
                 <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
                 <label for="dutchToEnglish" aria-label="Nederlands naar Engels">Nederlands-Engels</label>
             </div>
+            <h2>Vertaal het volgende woord:</h2>
             <p id="wordToTranslate"></p>
             <input type="text" id="translationInput" class="dropdown-button" placeholder="Enter translation" aria-label="Translation input">
-            <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Dit is het!</button>
+            <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Ok</button>
             <p id="resultMessage" aria-live="assertive"></p>
             <button id="nextBtn" class="button dropdown-button" onclick="nextWord()">Volgend woord</button>
             <div id="correctAnswers" aria-live="polite"></div>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Language Learning</p>
+        <p>&copy; 2024 Sven</p>
     </footer>
 
 
@@ -98,10 +98,10 @@
                 const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
 
                 if (userInput === correctTranslation) {
-                    document.getElementById("resultMessage").textContent = "Correct! Well done.";
+                    document.getElementById("resultMessage").textContent = "Helemaal goed!";
                     isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
                 } else {
-                    document.getElementById("resultMessage").textContent = "Incorrect. Please try again.";
+                    document.getElementById("resultMessage").textContent = "Helaas, dat is niet helemaal goed";
                 }
             } else {
                 console.error("Word is undefined or null");
