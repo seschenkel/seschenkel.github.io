@@ -15,19 +15,19 @@
             <div class="dropdown-container">
                 <label for="wordLists">Kies hier je woordenlijst:</label>
                 <select id="wordLists" class="dropdown-button" onchange="loadWordList()">
+                    <option value="">Selecteer een lijst</option>
                     <option value="English_Test.json">Engelse Test lijst</option>
                     <option value="French_Test.json">Franse test lijst</option>
                     <option value="samual_maart_2024.json">Lijst Samuel</option>
                     <!-- Add more options for different word lists -->
                 </select>
             </div>
-            <div class="dropdown-container">
-                <input type="radio" id="englishToDutch" name="translationDirection" value="englishToDutch" checked>
-                <label for="englishToDutch" aria-label="Engels naar Nederlands">Engels-Nederlands</label>
-            </div>
-            <div class="dropdown-container">
-                <input type="radio" id="dutchToEnglish" name="translationDirection" value="dutchToEnglish">
-                <label for="dutchToEnglish" aria-label="Nederlands naar Engels">Nederlands-Engels</label>
+            <div id="translationDirectionContainer" class="dropdown-container" style="display: none;">
+                <label for="translationDirection">Kies de vertaalrichting:</label>
+                <select id="translationDirection" class="dropdown-button">
+                    <option value="englishToDutch">Engels-Nederlands</option>
+                    <option value="dutchToEnglish">Nederlands-Engels</option>
+                </select>
             </div>
             <h2>Vertaal het volgende woord:</h2>
             <p id="wordToTranslate"></p>
@@ -51,6 +51,12 @@
         // Function to load word list based on selection
         function loadWordList() {
             const selectedList = document.getElementById("wordLists").value;
+            const translationDirectionContainer = document.getElementById("translationDirectionContainer");
+            if (selectedList) {
+                translationDirectionContainer.style.display = "block"; // Show translation direction dropdown
+            } else {
+                translationDirectionContainer.style.display = "none"; // Hide translation direction dropdown if no list is selected
+            }
             fetch(selectedList)
                 .then(response => {
                     if (!response.ok) {
@@ -160,6 +166,13 @@
             loadWordList(); // Fetch new word
             displayWordForTranslation(); // Display the word for translation with the updated direction
         }
-    </script>
+
+// Event listener for translation direction dropdown
+document.getElementById('translationDirection').addEventListener('change', function() {
+    translationDirection = this.value;
+    displayWordForTranslation();
+});
+</script>
 </body>
 </html>
+
