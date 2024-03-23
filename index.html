@@ -96,12 +96,7 @@
         }
 
         // Function to check translation
-        function checkTranslation(event) {
-            if (event.key === 'Enter') {
-                nextWord(); // Trigger nextWord function if Enter key is pressed
-                return;
-            }
-
+        function checkTranslation() {
             const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
             if (word) {
                 const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
@@ -119,8 +114,6 @@
                 console.error("Word is undefined or null");
             }
         }
-
-
 
         // Function to clear result message and input field
         function clearFeedback() {
@@ -168,8 +161,13 @@
             loadWordList(); // Load a new word list when the translation direction is changed
         }
 
-        // Event listener for translation direction dropdown
-        document.getElementById('translationDirection').addEventListener('change', updateTranslationDirection);
+        // Event listener for translation input
+        document.getElementById('translationInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent form submission on Enter key press
+                checkTranslation(); // Call the checkTranslation function
+            }
+        });
     </script>
 </body>
 </html>
