@@ -24,6 +24,11 @@ body {
 /* Container styles */
 .container {
     max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Center items horizontally */
 }
 
 /* Header styles */
@@ -119,7 +124,6 @@ main {
     font-size: 16px;
     cursor: pointer;
     display: block;
-    margin: 0 auto;
     margin-top: 20px;
     width: 200px; /* Adjust button width for mobile */
 }
