@@ -123,7 +123,7 @@
 
         // Function to load next word
         function nextWord() {
-            const selectedList = document.getElementById("wordLists").value
+            const selectedList = document.getElementById("wordLists").value;
             fetch(selectedList)
                     .then(response => {
                         if (!response.ok) {
@@ -160,6 +160,7 @@
             translationDirection = event.target.value;
             loadWordList(); // Load a new word list when the translation direction is changed
         }
+
 
         // Event listener for translation input
         document.getElementById('translationInput').addEventListener('keypress', function(event) {
