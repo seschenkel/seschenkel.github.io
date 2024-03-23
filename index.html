@@ -157,9 +157,9 @@
         }
 
         // Function to update translation direction based on dropdown selection
-        function updateTranslationDirection() {
-            translationDirection = document.getElementById("translationDirection").value;
-            displayWordForTranslation();
+        function updateTranslationDirection(event) {
+            translationDirection = event.target.value;
+            loadWordList(); // Load a new word list when the translation direction is changed
         }
 
         // Event listener for translation direction dropdown
