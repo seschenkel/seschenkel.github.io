@@ -16,16 +16,22 @@
         <option value="en-nl">English to Dutch</option>
         <!-- Add more options for different language pairs -->
       </select>
-      <div id="wordDisplay"></div>
-      <input type="text" id="translationInput" placeholder="Enter translation...">
+      <div id="exerciseArea">
+        <!-- Exercise content will be dynamically populated here -->
+      </div>
       <button id="submitBtn">Submit</button>
       <div id="feedback"></div>
       <div id="correctAnswer"></div>
+    </div>
+    <div class="progress">
+      <h2>Progress Analytics</h2>
+      <div id="progressChart"></div>
     </div>
   </main>
   <footer>
     <p>&copy; 2024 Language Learning Platform</p>
   </footer>
   <script src="script.js"></script>
+  <script src="chart.js"></script>
 </body>
 </html>
