@@ -1,50 +1,54 @@
-/* styles.css */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  header {
-    text-align: center;
     background-color: #f0f0f0;
+}
+
+header, footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
     padding: 20px 0;
-  }
-  
-  h1 {
-    margin: 0;
-  }
-  
-  main {
+}
+
+main {
     padding: 20px;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .controls {
-    margin-bottom: 20px;
-  }
-  
-  .translation {
-    text-align: center;
-  }
-  
-  input[type="text"] {
-    padding: 5px;
-    margin: 10px 0;
-  }
-  
-  button {
-    padding: 10px 20px;
-    margin: 0 5px;
-  }
-  
-  footer {
-    text-align: center;
-    background-color: #f0f0f0;
-    padding: 20px 0;
-  }
-  
+}
+
+#content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dropdown select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+input[type="text"], button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#feedback {
+    margin-top: 10px;
+    font-style: italic;
+}

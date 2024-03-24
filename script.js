@@ -1,58 +1,65 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    const wordlistSelect = document.getElementById('wordlist');
-    const directionSelect = document.getElementById('direction');
-    const wordDisplay = document.getElementById('word');
-    const translationInput = document.getElementById('translation');
-    const submitButton = document.getElementById('submit');
-    const nextButton = document.getElementById('next');
-    const feedbackMessage = document.getElementById('feedback');
-    const answerDisplay = document.getElementById('answer');
-  
-    let wordPairs = []; // Array to store word pairs
-    let currentIndex = 0; // Index to keep track of current word pair
-  
-    // Fetch word pairs from JSON file
-    async function fetchWordPairs() {
-      try {
-        const response = await fetch('wordpairs.json');
-        const data = await response.json();
-        wordPairs = data;
-        displayWordPair();
-      } catch (error) {
-        console.error('Error fetching word pairs:', error);
-        feedbackMessage.textContent = 'Error fetching word pairs. Please try again later.';
-      }
-    }
-  
-    // Display a random word pair
+document.addEventListener("DOMContentLoaded", function() {
+    const languageSelect = document.getElementById("languageSelect");
+    const wordDisplay = document.getElementById("wordDisplay");
+    const translationInput = document.getElementById("translationInput");
+    const submitBtn = document.getElementById("submitBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const feedback = document.getElementById("feedback");
+
+    let words = []; // Will hold the loaded word pairs from JSON
+
+    // Fetch data from JSON file
+    fetch('words.json')
+        .then(response => response.json())
+        .then(data => {
+            words = data;
+            displayWordPair();
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+            feedback.textContent = 'Error fetching data. Please try again later.';
+        });
+
+    // Display random word pair
     function displayWordPair() {
-      const randomIndex = Math.floor(Math.random() * wordPairs.length);
-      currentIndex = randomIndex;
-      wordDisplay.textContent = directionSelect.value === 'en-to-nl' ? wordPairs[randomIndex].english : wordPairs[randomIndex].dutch;
+        const randomIndex = Math.floor(Math.random() * words.length);
+        const selectedWord = words[randomIndex];
+        if (languageSelect.value === 'english-dutch') {
+            wordDisplay.textContent = selectedWord.english;
+        } else {
+            wordDisplay.textContent = selectedWord.dutch;
+        }
     }
-  
+
     // Submit button click event
-    submitButton.addEventListener('click', function() {
-      const userTranslation = translationInput.value.trim().toLowerCase();
-      const correctTranslation = directionSelect.value === 'en-to-nl' ? wordPairs[currentIndex].dutch.toLowerCase() : wordPairs[currentIndex].english.toLowerCase();
-      if (userTranslation === correctTranslation) {
-        feedbackMessage.textContent = 'Correct!';
-      } else {
-        feedbackMessage.textContent = 'Incorrect. Try again.';
-      }
-      answerDisplay.textContent = `Correct answer: ${correctTranslation}`;
+    submitBtn.addEventListener("click", function() {
+        const userTranslation = translationInput.value.trim().toLowerCase();
+        const currentWord = wordDisplay.textContent.trim().toLowerCase();
+        if (userTranslation === currentWord) {
+            feedback.textContent = 'Correct!';
+        } else {
+            feedback.textContent = 'Incorrect. The correct translation is: ' + getCurrentTranslation();
+        }
     });
-  
+
     // Next button click event
-    nextButton.addEventListener('click', function() {
-      translationInput.value = ''; // Clear input field
-      feedbackMessage.textContent = ''; // Clear feedback message
-      answerDisplay.textContent = ''; // Clear answer display
-      displayWordPair(); // Display next word pair
+    nextBtn.addEventListener("click", function() {
+        displayWordPair();
+        translationInput.value = ''; // Clear input field
+        feedback.textContent = ''; // Clear feedback
     });
-  
-    // Fetch word pairs when the page loads
-    fetchWordPairs();
-  });
-  
+
+    // Get the translation based on the current language selection
+    function getCurrentTranslation() {
+        const currentWord = wordDisplay.textContent.trim().toLowerCase();
+        const selectedWord = words.find(word => word.english.toLowerCase() === currentWord || word.dutch.toLowerCase() === currentWord);
+        return languageSelect.value === 'english-dutch' ? selectedWord.dutch : selectedWord.english;
+    }
+
+    // Language select change event
+    languageSelect.addEventListener("change", function() {
+        displayWordPair();
+        translationInput.value = ''; // Clear input field
+        feedback.textContent = ''; // Clear feedback
+    });
+});
