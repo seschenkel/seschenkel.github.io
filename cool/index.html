@@ -110,15 +110,15 @@
 
       // Function to display fill-in-the-blank exercise
       function displayFillInTheBlankExercise(wordPair) {
-        currentExercise = {
-          type: exerciseTypes.FILL_IN_THE_BLANK,
-          english: wordPair.english,
-          dutch: wordPair.dutch
-        };
-        exerciseArea.innerHTML = `
-          <p>Translate: <input type="text" id="fillInTheBlankInput" placeholder="Enter translation..."></p>
-        `;
-      }
+      currentExercise = {
+        type: exerciseTypes.FILL_IN_THE_BLANK,
+        english: wordPair.english,
+        dutch: wordPair.dutch
+      };
+      exerciseArea.innerHTML = `
+        <p>Translate: <input type="text" id="fillInTheBlankInput" placeholder="Enter translation..."></p>
+      `;
+    }
 
       // Function to display matching exercise
       function displayMatchingExercise(wordPair) {
