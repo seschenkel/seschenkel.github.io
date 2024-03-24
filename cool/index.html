@@ -45,6 +45,7 @@
       let currentExercise = null;
       let totalCorrectAnswers = 0;
       let totalExercises = 0;
+      let wordPairs = []; // Declare and initialize wordPairs variable
 
       // Exercise types
       const exerciseTypes = {
@@ -151,10 +152,6 @@
         if (userAnswer === currentExercise.dutch.toLowerCase()) {
           feedback.textContent = 'Correct!';
           correctAnswer.textContent = '';
-          total
-          if (userAnswer === currentExercise.dutch.toLowerCase()) {
-          feedback.textContent = 'Correct!';
-          correctAnswer.textContent = '';
           totalCorrectAnswers++;
         } else {
           feedback.textContent = 'Incorrect. Try again.';
@@ -199,3 +196,4 @@
   </script>
 </body>
 </html>
+
