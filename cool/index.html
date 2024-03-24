@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Language Learning Platform</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <header>
@@ -25,15 +26,14 @@
     </div>
     <div class="progress">
       <h2>Progress Analytics</h2>
-      <div id="progressChart"></div>
+      <div class="chart-container">
+        <canvas id="progressChart"></canvas>
+      </div>
     </div>
   </main>
   <footer>
     <p>&copy; 2024 Language Learning Platform</p>
   </footer>
   <script src="script.js"></script>
-  <script src="chart.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
 </body>
 </html>

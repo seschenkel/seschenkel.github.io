@@ -8,7 +8,30 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentExercise = null;
     let totalCorrectAnswers = 0;
     let totalExercises = 0;
-  
+
+    
+    // Function to fetch word pairs from JSON file
+    function fetchWordPairs(language) {
+        // Assuming the JSON file is located in the same directory
+        const url = `wordPairs_${language}.json`;
+    
+        fetch(url)
+        .then(response => {
+            if (!response.ok) {
+            throw new Error('Failed to fetch word pairs');
+            }
+            return response.json();
+        })
+        .then(data => {
+            // Assuming the JSON file contains an array of word pairs
+            wordPairs = data;
+        })
+        .catch(error => {
+            console.error('Error fetching word pairs:', error.message);
+        });
+    }
+
+    
     // Exercise types
     const exerciseTypes = {
       FILL_IN_THE_BLANK: 'fill-in-the-blank',
