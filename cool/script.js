@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to fetch word pairs from JSON file
     function fetchWordPairs(language) {
         // Assuming the JSON file is located in the same directory
-        const url = `wordPairs_${language}.json`;
+        const url = `wordPairs_en-nl.json`;
     
         fetch(url)
         .then(response => {
