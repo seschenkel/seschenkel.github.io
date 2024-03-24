@@ -17,9 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Function to update progress chart
     function updateProgressChart() {
-      const accuracy = totalExercises > 0 ? (totalCorrectAnswers / totalExercises * 100).toFixed(2) : 0;
+      const accuracy = totalExercises > 0 ? ((totalCorrectAnswers / totalExercises) * 100).toFixed(2) : 0;
   
-      // Update or initialize chart
       if (progressChart.dataset.chart === 'initialized') {
         progressChart.data.datasets[0].data = [accuracy];
         progressChart.update();
