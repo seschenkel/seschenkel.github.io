@@ -168,6 +168,7 @@
         const randomIndex = Math.floor(Math.random() * wordPairs.length);
         const randomWordPair = wordPairs[randomIndex];
 
+        // Randomly choose an exercise type
         const exerciseType = Math.random() < 0.5 ? exerciseTypes.FILL_IN_THE_BLANK : exerciseTypes.MATCHING;
 
         if (exerciseType === exerciseTypes.FILL_IN_THE_BLANK) {
@@ -176,6 +177,7 @@
           displayMatchingExercise(randomWordPair);
         }
       }
+
 
       // Initialize: Fetch word pairs based on selected language
       function initialize() {
