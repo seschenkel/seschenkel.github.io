@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History Flash Cards</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .flashcard {
+        width: 300px;
+        height: 300px;
+        background-color: lightblue;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s;
+    }
+    .flashcard:hover {
+        transform: rotateY(180deg);
+    }
+    .back {
+        display: none;
+        transform: rotateY(180deg);
+    }
+    .show {
+        display: block;
+    }
+    .btn {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: blue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="flashcard-container">
+    <div class="flashcard">
+        <div class="front">
+            <h2>Front of Card</h2>
+            <p>Click to reveal the back</p>
+        </div>
+        <div class="back">
+            <h2>Back of Card</h2>
+            <p>This is where the explanation goes</p>
+        </div>
+    </div>
+    <button class="btn" id="next-btn">Next Card</button>
+</div>
+
+<script>
+    const flashcard = document.querySelector('.flashcard');
+    const front = document.querySelector('.front');
+    const back = document.querySelector('.back');
+    const nextBtn = document.getElementById('next-btn');
+
+    let currentCardIndex = -1;
+    let flashcards = [];
+
+    fetch('flashcards.json')
+    .then(response => response.json())
+    .then(data => {
+        flashcards = data;
+        showNextCard();
+    });
+
+    function showNextCard() {
+        currentCardIndex = Math.floor(Math.random() * flashcards.length);
+        front.textContent = flashcards[currentCardIndex].concept;
+        back.textContent = flashcards[currentCardIndex].explanation;
+        back.classList.remove('show');
+        flashcard.classList.remove('flipped');
+    }
+
+    flashcard.addEventListener('click', () => {
+        flashcard.classList.toggle('flipped');
+        back.classList.toggle('show');
+    });
+
+    nextBtn.addEventListener('click', showNextCard);
+</script>
+
+</body>
+</html>
