@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Learning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Zelf je kennis testen!</h1>
+    </header>
+    <main>
+        <div id="wordContainer" class="container">
+            <div class="dropdown-container">
+                <label for="wordLists">Kies hier je woordenlijst:</label>
+                <select id="wordLists" class="dropdown-button" onchange="loadWordList()">
+                    <option value="">Selecteer een lijst</option>
+                    <option value="Joep_toestweek_april_Frans_2024.json">Lijst Joep, Frans april</option>
+                    <option value="Alec_24maart_2024.json">Lijst Alec zondag</option>
+                    <option value="Alec_25maart_2024.json">Lijst Alec maandag</option>
+                    <option value="samual_maart_2024.json">Lijst Samuel</option>
+                    <!-- Add more options for different word lists -->
+                </select>
+            </div>
+            <div id="translationDirectionContainer" class="dropdown-container" style="display: none;">
+                <label for="translationDirection">Kies de vertaalrichting:</label>
+                <select id="translationDirection" class="dropdown-button" onchange="updateTranslationDirection()">
+                    <option value="englishToDutch">Engels-Nederlands</option>
+                    <option value="dutchToEnglish">Nederlands-Engels</option>
+                </select>
+            </div>
+            <h2>Vertaal het volgende woord:</h2>
+            <p id="wordToTranslate"></p>
+            <input type="text" id="translationInput" class="dropdown-button" placeholder="Enter translation" aria-label="Translation input">
+            <button id="submitBtn" class="button dropdown-button" onclick="checkTranslation()">Ok</button>
+            <p id="resultMessage" aria-live="assertive"></p>
+            <button id="nextBtn" class="button dropdown-button" style="display:none;" onclick="nextWord()">Volgend woord</button>
+            <div id="correctAnswers" aria-live="polite"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sven</p>
+    </footer>
+
+
+    <script>
+        let word;
+        let translationDirection = "englishToDutch"; // Default translation direction
+        let isAnswerSubmitted = false; // Flag to track if an answer is submitted
+
+        // Function to load word list based on selection
+        function loadWordList() {
+            const selectedList = document.getElementById("wordLists").value;
+            const translationDirectionContainer = document.getElementById("translationDirectionContainer");
+            if (selectedList) {
+                translationDirectionContainer.style.display = "block"; // Show translation direction dropdown
+            } else {
+                translationDirectionContainer.style.display = "none"; // Hide translation direction dropdown if no list is selected
+            }
+            fetch(selectedList)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data && data.length > 0) {
+                        // Once data is fetched, choose a random word
+                        word = getRandomWord(data);
+
+                        // Display the word for translation
+                        displayWordForTranslation();
+                    } else {
+                        console.error('No data found in selected word list');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching word data:', error);
+                });
+        }
+
+        // Function to get a random word based on translation direction
+        function getRandomWord(data) {
+            const randomIndex = Math.floor(Math.random() * data.length);
+            return data[randomIndex];
+        }
+
+        // Function to display a word for translation
+        function displayWordForTranslation() {
+            if (word) {
+                const selectedDirection = document.getElementById("translationDirection").value;
+                document.getElementById("wordToTranslate").textContent = (selectedDirection === "englishToDutch") ? word.english : word.dutch;
+            } else {
+                console.error("Word is undefined or null");
+            }
+        }
+
+        // Function to check translation
+        function checkTranslation() {
+            const userInput = document.getElementById("translationInput").value.trim().toLowerCase();
+            if (word) {
+                const correctTranslation = (translationDirection === "englishToDutch") ? word.dutch.toLowerCase() : word.english.toLowerCase();
+
+                if (userInput === correctTranslation) {
+                    document.getElementById("resultMessage").textContent = "Helemaal goed!";
+                    isAnswerSubmitted = true; // Set isAnswerSubmitted to true when answer is correct
+                    document.getElementById("nextBtn").style.display = "inline-block"; // Show the "Next" button
+                } else {
+                    // If the answer is wrong, display the correct answer
+                    document.getElementById("resultMessage").textContent = "Helaas, dat is niet helemaal goed. Het correcte antwoord is: " + correctTranslation;
+                    document.getElementById("nextBtn").style.display = "none"; // Hide the "Next" button
+                }
+            } else {
+                console.error("Word is undefined or null");
+            }
+        }
+
+        // Function to clear result message and input field
+        function clearFeedback() {
+            document.getElementById("resultMessage").textContent = ""; // Clear feedback text
+            document.getElementById("translationInput").value = ""; // Clear input field
+        }
+
+        // Function to load next word
+        function nextWord() {
+            const selectedList = document.getElementById("wordLists").value;
+            fetch(selectedList)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data && data.length > 0) {
+                            // Choose a new random word
+                            word = getRandomWord(data);
+
+                            // Display the new word for translation
+                            displayWordForTranslation();
+
+                            // Clear previous result message and input field
+                            clearFeedback();
+
+                            // Hide the "Next" button
+                            document.getElementById("nextBtn").style.display = "none";
+                        } else {
+                            console.error('No data found in selected word list');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching word data:', error);
+                    });
+
+            isAnswerSubmitted = false; // Reset isAnswerSubmitted to false after loading next word
+        }
+
+        // Function to update translation direction based on dropdown selection
+        function updateTranslationDirection() {
+            translationDirection = document.getElementById("translationDirection").value;
+            clearFeedback(); // Clear previous result message and input field
+            displayWordForTranslation(); // Display the word for translation with the updated direction
+        }
+
+        // Event listener for translation input
+        document.getElementById('translationInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent form submission on Enter key press
+                checkTranslation(); // Call the checkTranslation function
+            }
+        });
+    </script>
+</body>
+</html>
