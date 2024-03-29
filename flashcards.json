@@ -94,5 +94,138 @@
   {
     "concept": "zwakke staat",
     "explanation": "Staat waarin de overheid slecht functioneert."
-  }
+  },
+    {
+        "concept": "analfabetisme",
+        "explanation": "Het percentage van de bevolking ouder dan 15 jaar dat niet kan lezen of schrijven."
+    },
+    {
+        "concept": "arbeidsmigrant",
+        "explanation": "Iemand die ergens anders gaat werken vanwege gebrek aan werk en geld in zijn eigen gebied."
+    },
+    {
+        "concept": "basisbehoefte",
+        "explanation": "Iets wat iedereen echt nodig heeft om redelijk te kunnen leven, zoals voedsel, huisvesting, onderwijs en gezondheidszorg."
+    },
+    {
+        "concept": "bevolkingsconcentratie",
+        "explanation": "Opeenhoping van mensen in een gebied."
+    },
+    {
+        "concept": "bevolkingsdichtheid",
+        "explanation": "Het gemiddelde aantal inwoners per vierkante kilometer (inw/km²)."
+    },
+    {
+        "concept": "bevolkingskenmerk",
+        "explanation": "Kenmerk van de bevolking van een gebied."
+    },
+    {
+        "concept": "bevolkingsspreiding",
+        "explanation": "De verdeling van de mensen over een land of gebied."
+    },
+    {
+        "concept": "braindrain",
+        "explanation": "Het vertrek van goedopgeleide mensen naar het buitenland."
+    },
+    {
+        "concept": "bruto nationaal product (bnp)",
+        "explanation": "Het geld dat alle inwoners in een land samen verdienen."
+    },
+    {
+        "concept": "cultuur",
+        "explanation": "Alles wat je hebt aangeleerd."
+    },
+    {
+        "concept": "delta",
+        "explanation": "Gebied vlak voor de monding, waar de rivier zich vertakt in veel rivierlopen."
+    },
+    {
+        "concept": "directe werkgelegenheid",
+        "explanation": "Werkgelegenheid die voortkomt uit een bepaalde activiteit."
+    },
+    {
+        "concept": "donorland",
+        "explanation": "Land dat ontwikkelingshulp geeft."
+    },
+    {
+        "concept": "etnische groep",
+        "explanation": "Deel van een volk dat in een ander land (bij elkaar) woont."
+    },
+    {
+        "concept": "geboortecijfer",
+        "explanation": "Het gemiddelde aantal levendgeborenen per duizend inwoners per jaar."
+    },
+    {
+        "concept": "indirecte werkgelegenheid",
+        "explanation": "Extra werkgelegenheid die niet direct ontstaat door een bepaalde activiteit, maar die daaruit voortvloeit."
+    },
+    {
+        "concept": "informele sector",
+        "explanation": "Ongeschoold, slechtbetaald werk in de dienstensector."
+    },
+    {
+        "concept": "infrastructuur",
+        "explanation": "Alle voorzieningen die nodig zijn om personen, goederen en informatie te vervoeren."
+    },
+    {
+        "concept": "klimaat",
+        "explanation": "Het gemiddelde weer in een bepaald gebied over dertig of veertig jaar."
+    },
+    {
+        "concept": "klimaatdiagram",
+        "explanation": "Diagram met de gemiddelde temperatuur en neerslag van een plaats of een gebied."
+    },
+    {
+        "concept": "kolonie",
+        "explanation": "Gebied in een ander werelddeel dat in bezit is van een Europees land."
+    },
+    {
+        "concept": "koopkracht",
+        "explanation": "Het aantal goederen en diensten dat je geld kunt kopen."
+    },
+    {
+        "concept": "kunstmatige grens",
+        "explanation": "Grens die door mensen is bepaald."
+    },
+    {
+        "concept": "landbouw",
+        "explanation": "Het houden van dieren of het verbouwen van gewassen voor menselijk gebruik."
+    },
+    {
+        "concept": "levensverwachting",
+        "explanation": "Het gemiddelde aantal te verwachten levensjaren op een bepaalde leeftijd."
+    },
+    {
+        "concept": "mangrove",
+        "explanation": "Boom die langs tropische kusten leeft in zout water."
+    },
+    {
+        "concept": "massatoerisme",
+        "explanation": "Toerisme waarbij heel veel toeristen op dezelfde plek verblijven."
+    },
+    {
+        "concept": "monocultuur",
+        "explanation": "Het verbouwen van één product."
+    },
+    {
+        "concept": "multiculturele samenleving",
+        "explanation": "Samenleving van mensen uit verschillende culturen."
+    },
+    {
+        "concept": "natuurgodsdienst",
+        "explanation": "Geloof in het bestaan van goede en kwade geesten."
+    },
+    {
+        "concept": "natuurlijke grens",
+        "explanation": "Grens langs een natuurlijk obstakel, zoals een rivier of een gebergte."
+    },
+    {
+        "concept": "nomade",
+        "explanation": "Iemand zonder vaste woonplaats."
+    },
+    {
+        "concept": "noodhulp",
+        "explanation": "Hulp om te kunnen overleven bij een hongersnood of een natuurramp."
+    }
 ]
+
