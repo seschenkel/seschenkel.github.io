@@ -87,9 +87,15 @@
     }
 
     flashcard.addEventListener('click', () => {
-        flashcard.classList.toggle('flipped');
-        back.classList.toggle('show');
+        if (front.style.display !== "none") {
+            front.style.display = "none";
+            back.style.display = "block";
+        } else {
+            back.style.display = "none";
+            front.style.display = "block";
+        }    
     });
+
 
     nextBtn.addEventListener('click', showNextCard);
 </script>
