@@ -35,14 +35,14 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: orangered; /* Orangered */
 }
 
 /* Footer styles */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: orangered; /* Orangered background */
 }
 
 /* Main content styles */
