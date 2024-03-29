@@ -157,6 +157,10 @@ main {
     background-color: #f4f4f4;
     padding: 10px;
     text-align: center;
+    flex: 1; /* Take remaining vertical space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
 }
 
 #index-nav a {
