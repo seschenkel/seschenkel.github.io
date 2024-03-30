@@ -35,14 +35,14 @@ body {
 header {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: orangered; /* Orangered */
 }
 
 /* Footer styles */
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #f0f0f0; /* Light gray background */
+    background-color: orangered; /* Orangered background */
 }
 
 /* Main content styles */
@@ -144,4 +144,41 @@ main {
     width: 100%;
     box-sizing: border-box; /* Ensure padding is included in width calculation */
     margin-bottom: 20px;
+}
+
+#index-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0; /* Light gray background */
+}
+
+/* Index navigation styles */
+#index-nav {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    flex: 1; /* Take remaining vertical space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+#index-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+#index-nav a:hover {
+    background-color: #ccc;
+}
+
+.dropdown-options {
+    display: none;
+    /* Other styles... */
+}
+.dropdown-container.open .dropdown-options {
+    display: block;
 }
