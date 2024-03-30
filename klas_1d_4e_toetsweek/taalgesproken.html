@@ -13,8 +13,7 @@ $(document).ready(function(){
     var currentLang = "nl"; // Default language
     var audio; // Declared at this scope to make it accessible by other functions.
 
-    // Dropdown functionality
-    $('.dropdown-button').click(function(){
+    $(document).on('click', '.dropdown-button', function(){
         $(this).parent().toggleClass('open');
     });
 
