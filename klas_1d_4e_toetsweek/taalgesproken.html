@@ -9,7 +9,20 @@
 $(document).ready(function(){
     var words = [];
     var currentWordIndex = -1;
-    
+    var languages = { "nl": "dutch", "fr": "english" };
+    var currentLang = "nl"; // Default language
+
+    // Dropdown functionality
+    $('.dropdown-button').click(function(){
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.dropdown-options li').click(function(){
+        currentLang = $(this).attr('id');
+        $('.dropdown-button').text($(this).text()).parent().removeClass('open');
+    });
+
+    // Gets JSON data
     $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
         words = data;
         showNextWord();
@@ -17,32 +30,36 @@ $(document).ready(function(){
         var err = textStatus + ", " + error;
         console.error( "Error loading JSON: " + err );
     });
-    
+
+    // Show next word
     function showNextWord() {
         currentWordIndex++;
         if (currentWordIndex >= words.length) {
             currentWordIndex = 0;
         }
-        
         var word = words[currentWordIndex];
-        var text = (Math.random() < 0.5) ? word.dutch : word.english;
-        var lang = (text === word.dutch) ? "nl" : "fr"; // Set language based on the text
-        
+        var text = word[languages[currentLang]];
+        var lang = currentLang;
+
+        // Speech synthesis
         if (window.speechSynthesis) {
             var audio = new SpeechSynthesisUtterance(text);
-            audio.lang = lang; // Set the language
+            audio.lang = lang; 
             window.speechSynthesis.speak(audio);
         } else {
             console.error("Speech synthesis not supported.");
         }
-        
+
+        // Update word text
         $('#word').text(text);
-        
+
+        // Show "Next" button after 10 seconds
         setTimeout(function(){
             $('#nextButton').show();
-        }, 10000); // Show "Next" button after 5 seconds
+        }, 10000);
     }
-    
+
+    // next button behavior
     $('#nextButton').click(function(){
         $('#nextButton').hide();
         showNextWord();
@@ -52,6 +69,16 @@ $(document).ready(function(){
 </head>
 <body>
 <h1>Language Learning</h1>
+        <div class="dropdown-container">
+        <button type="button" class="dropdown-button">Select Language</button>
+        <div class="dropdown-options">
+            <ul>
+                <li id="nl">Dutch - English</li>
+                <li id="fr">English - French</li>
+                <!-- add more languages here -->
+            </ul>
+        </div>
+    </div>
 <div id="word"></div>
 <button id="nextButton" style="display: none;">Next</button>
 <nav id="index-nav">
