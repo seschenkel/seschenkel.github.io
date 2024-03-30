@@ -174,3 +174,11 @@ main {
 #index-nav a:hover {
     background-color: #ccc;
 }
+
+.dropdown-options {
+    display: none;
+    /* Other styles... */
+}
+.dropdown-container.open .dropdown-options {
+    display: block;
+}
