@@ -10,7 +10,7 @@ $(document).ready(function(){
     var words = [];
     var currentWordIndex = -1;
     
-    $.getJSON('words.json', function(data) {
+    $.getJSON(Joep_toestweek_april_Frans_2024.json, function(data) {
         words = data;
         showNextWord();
     });
