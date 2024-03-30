@@ -10,9 +10,12 @@ $(document).ready(function(){
     var words = [];
     var currentWordIndex = -1;
     
-    $.getJSON(Joep_toestweek_april_Frans_2024.json, function(data) {
+    $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
         words = data;
         showNextWord();
+    }).fail(function(jqxhr, textStatus, error) {
+        var err = textStatus + ", " + error;
+        console.error( "Error loading JSON: " + err );
     });
     
     function showNextWord() {
@@ -24,8 +27,12 @@ $(document).ready(function(){
         var word = words[currentWordIndex];
         var text = (Math.random() < 0.5) ? word.dutch : word.english;
         
-        var audio = new SpeechSynthesisUtterance(text);
-        window.speechSynthesis.speak(audio);
+        if (window.speechSynthesis) {
+            var audio = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(audio);
+        } else {
+            console.error("Speech synthesis not supported.");
+        }
         
         $('#word').text(text);
         
