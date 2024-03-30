@@ -11,24 +11,7 @@ $(document).ready(function(){
     var currentWordIndex = -1;
     var languages = { "nl": "dutch", "fr": "english" };
     var currentLang = "nl"; // Default language
-    var audio;
-
-    function showNextWord() {
-    // rest of your code
-    if (window.speechSynthesis) {
-        audio = new SpeechSynthesisUtterance(text);
-        audio.lang = lang;
-    } else {
-        console.error("Speech synthesis not supported.");
-    }
- 
-    $('#word').text(text);
-    
-    $('#playButton').show(); // Show "Play" button on the new word
-    $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
-    
-    // no need to setTimeout for #nextButton, this will be shown when the "Play" button is clicked now
-}
+    var audio; // Declared at this scope to make it accessible by other functions.
 
     // Dropdown functionality
     $('.dropdown-button').click(function(){
@@ -59,40 +42,36 @@ $(document).ready(function(){
         var text = word[languages[currentLang]];
         var lang = currentLang;
 
-        // Speech synthesis
-        if (window.speechSynthesis) {
-            var audio = new SpeechSynthesisUtterance(text);
-            audio.lang = lang; 
-            window.speechSynthesis.speak(audio);
+        // Speech Synthesis
+        if(window.speechSynthesis) {
+            audio = new SpeechSynthesisUtterance(text);
+            audio.lang = lang;
         } else {
             console.error("Speech synthesis not supported.");
         }
 
-        // Update word text
         $('#word').text(text);
 
-        // Show "Next" button after 10 seconds
-        setTimeout(function(){
-            $('#nextButton').show();
-        }, 3000);
+        $('#playButton').show(); // Show "Play" button on the new word
+        $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
     }
 
-// handler to play the audio on button click and then show "Next" button
-$('#playButton').click(function(){
-    if (window.speechSynthesis && audio) {
-        window.speechSynthesis.speak(audio);
-    }
-     
-    $('#nextButton').show();
-    $('#playButton').hide();
-});
+    // handler to play the audio on button click and then show "Next" button
+    $('#playButton').click(function(){
+        if(window.speechSynthesis && audio) {
+            window.speechSynthesis.speak(audio);
+        }
 
-// next button behavior
-$('#nextButton').click(function(){
-    $('#nextButton').hide();
-    $('#playButton').show();
-    showNextWord();
-});
+        $('#nextButton').show();
+        $('#playButton').hide();
+    });
+
+    // next button behaviour
+    $('#nextButton').click(function() {
+        $('#nextButton').hide();
+        $('#playButton').show();
+        showNextWord();
+    });
 });
 </script>
 </head>
