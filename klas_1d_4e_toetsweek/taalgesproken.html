@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Language Learning</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    var words = [];
+    var currentWordIndex = -1;
+    
+    $.getJSON('words.json', function(data) {
+        words = data;
+        showNextWord();
+    });
+    
+    function showNextWord() {
+        currentWordIndex++;
+        if (currentWordIndex >= words.length) {
+            currentWordIndex = 0;
+        }
+        
+        var word = words[currentWordIndex];
+        var text = (Math.random() < 0.5) ? word.dutch : word.english;
+        
+        var audio = new SpeechSynthesisUtterance(text);
+        window.speechSynthesis.speak(audio);
+        
+        $('#word').text(text);
+        
+        setTimeout(function(){
+            $('#nextButton').show();
+        }, 5000); // Show "Next" button after 5 seconds
+    }
+    
+    $('#nextButton').click(function(){
+        $('#nextButton').hide();
+        showNextWord();
+    });
+});
+</script>
+</head>
+<body>
+<h1>Language Learning</h1>
+<div id="word"></div>
+<button id="nextButton" style="display: none;">Next</button>
+</body>
+</html>
