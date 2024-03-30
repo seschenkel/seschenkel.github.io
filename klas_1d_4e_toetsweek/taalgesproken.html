@@ -21,7 +21,10 @@ $(document).ready(function(){
         currentLang = $(this).attr('id');
         $('.dropdown-button').text($(this).text()).parent().removeClass('open');
     });
-
+    
+    // Hide correct answer until word is played
+    $('#correctAnswer').hide();
+    
     // Gets JSON data
     $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
         words = data;
@@ -60,10 +63,17 @@ $(document).ready(function(){
         if(window.speechSynthesis && audio) {
             window.speechSynthesis.speak(audio);
         }
-
+    
         $('#nextButton').show();
         $('#playButton').hide();
+        
+        // show the correct answer when word is played
+        var currentWord = words[currentWordIndex];
+        var otherLang = currentLang == 'nl' ? 'fr' : 'nl'; // Switch between 'nl' and 'fr'
+        var correctAnswer = currentWord[languages[otherLang]];
+        $('#correctAnswer').text("Correct Answer: " + correctAnswer).show();
     });
+
 
     // next button behaviour
     $('#nextButton').click(function() {
@@ -89,6 +99,7 @@ $(document).ready(function(){
 </div>
 <div id="word"></div>
 <button id="playButton" style="display: none;">Play</button>
+<div id="correctAnswer" style="display: none;"></div>
 <button id="nextButton" style="display: none;">Next</button>
 <nav id="index-nav">
     <a href="index.html">terug</a>
