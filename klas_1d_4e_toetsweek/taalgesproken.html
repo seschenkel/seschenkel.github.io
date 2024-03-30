@@ -63,13 +63,15 @@ $(document).ready(function(){
             window.speechSynthesis.speak(audio);
         }
     
-        $('#nextButton').show();
-        
-        // show the correct answer when word is played
-        var currentWord = words[currentWordIndex];
-        var otherLang = currentLang == 'nl' ? 'fr' : 'nl'; // Switch between 'nl' and 'fr'
-        var correctAnswer = currentWord[languages[otherLang]];
-        $('#correctAnswer').text("Correct Answer: " + correctAnswer).show();
+                setTimeout(function () {
+                    $('#nextButton').show();
+
+                    // show the correct answer when word is played
+                    var currentWord = words[currentWordIndex];
+                    var otherLang = currentLang == 'nl' ? 'fr' : 'nl'; // Switch between 'nl' and 'fr'
+                    var correctAnswer = currentWord[languages[otherLang]];
+                    $('#correctAnswer').text("Correct Answer: " + correctAnswer).show();
+                }, 5000); // 5000ms = 5 seconds
     });
 
 
