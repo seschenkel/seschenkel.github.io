@@ -11,6 +11,24 @@ $(document).ready(function(){
     var currentWordIndex = -1;
     var languages = { "nl": "dutch", "fr": "english" };
     var currentLang = "nl"; // Default language
+    var audio;
+
+    function showNextWord() {
+    // rest of your code
+    if (window.speechSynthesis) {
+        audio = new SpeechSynthesisUtterance(text);
+        audio.lang = lang;
+    } else {
+        console.error("Speech synthesis not supported.");
+    }
+ 
+    $('#word').text(text);
+    
+    $('#playButton').show(); // Show "Play" button on the new word
+    $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
+    
+    // no need to setTimeout for #nextButton, this will be shown when the "Play" button is clicked now
+}
 
     // Dropdown functionality
     $('.dropdown-button').click(function(){
@@ -56,14 +74,25 @@ $(document).ready(function(){
         // Show "Next" button after 10 seconds
         setTimeout(function(){
             $('#nextButton').show();
-        }, 10000);
+        }, 3000);
     }
 
-    // next button behavior
-    $('#nextButton').click(function(){
-        $('#nextButton').hide();
-        showNextWord();
-    });
+// handler to play the audio on button click and then show "Next" button
+$('#playButton').click(function(){
+    if (window.speechSynthesis && audio) {
+        window.speechSynthesis.speak(audio);
+    }
+     
+    $('#nextButton').show();
+    $('#playButton').hide();
+});
+
+// next button behavior
+$('#nextButton').click(function(){
+    $('#nextButton').hide();
+    $('#playButton').show();
+    showNextWord();
+});
 });
 </script>
 </head>
@@ -82,6 +111,7 @@ $(document).ready(function(){
         </div>
     </div>
 <div id="word"></div>
+<button id="playButton" style="display: none;">Play</button>
 <button id="nextButton" style="display: none;">Next</button>
 <nav id="index-nav">
     <a href="index.html">terug</a>
