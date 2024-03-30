@@ -98,7 +98,116 @@ $(document).ready(function(){
     </div>
 </div>
 <div id="word"></div>
-<button id="playButton" style="display: none;">Play</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Language Learning</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+    var words = [];
+    var currentWordIndex = -1;
+    var languages = { "nl": "dutch", "fr": "english" };
+    var currentLang = "nl"; // Default language
+    var audio; // Declared at this scope to make it accessible by other functions.
+    
+    // Hide correct answer until word is played
+    $('#correctAnswer').hide();
+    
+    // Gets JSON data
+    $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
+        words = data;
+        showNextWord();
+    }).fail(function(jqxhr, textStatus, error) {
+        var err = textStatus + ", " + error;
+        console.error( "Error loading JSON: " + err );
+    });
+
+    // Show next word
+    function showNextWord() {
+        currentWordIndex++;
+        if (currentWordIndex >= words.length) {
+            currentWordIndex = 0;
+        }
+        var word = words[currentWordIndex];
+        var text = word[languages[currentLang]];
+        var lang = currentLang;
+
+        // Speech Synthesis
+        if(window.speechSynthesis) {
+            audio = new SpeechSynthesisUtterance(text);
+            audio.lang = lang;
+        } else {
+            console.error("Speech synthesis not supported.");
+        }
+
+        $('#word').text(text);
+
+        $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
+    }
+
+    // handler to play the audio on button click and then show "Next" button
+    $('#playButton').click(function(){
+        if(window.speechSynthesis && audio) {
+            window.speechSynthesis.speak(audio);
+        }
+    
+                setTimeout(function () {
+                    $('#nextButton').show();
+
+                    // show the correct answer when word is played
+                    var currentWord = words[currentWordIndex];
+                    var otherLang = currentLang == 'nl' ? 'fr' : 'nl'; // Switch between 'nl' and 'fr'
+                    var correctAnswer = currentWord[languages[otherLang]];
+                    $('#correctAnswer').text("Correct Answer: " + correctAnswer).show();
+                }, 5000); // 5000ms = 5 seconds
+    });
+
+
+    // next button behaviour
+    $('#nextButton').click(function() {
+        $('#nextButton').hide();
+        $('#playButton').show();
+        showNextWord();
+    });
+
+    
+        $(document).on('click', '.dropdown-button', function(){
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.dropdown-options li').click(function(){
+        currentLang = $(this).attr('id');
+        $('.dropdown-button').text($(this).text()).parent().removeClass('open');
+    });
+
+});
+</script>
+</head>
+<body>
+    <header>
+        <h1>Zelf je kennis testen!</h1>
+    </header>
+<div class="dropdown-container">
+    <button type="button" class="dropdown-button">Select Language</button>
+    <div class="dropdown-options">
+        <ul>
+            <li id="nl">Dutch - English</li>
+            <li id="fr">English - French</li>
+        </ul>
+    </div>
+</div>
+<div id="word"></div>
+<button id="playButton" style="display: block;">Play</button>
+<div id="correctAnswer" style="display: none;"></div>
+<button id="nextButton" style="display: none;">Next</button>
+<nav id="index-nav">
+    <a href="index.html">terug</a>
+</nav>
+</body>
+</html>
 <div id="correctAnswer" style="display: none;"></div>
 <button id="nextButton" style="display: none;">Next</button>
 <nav id="index-nav">
