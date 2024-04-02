@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Maerlant Aardrijkskunde 1e klas - april 2024</title>
+        <title>Aardrijkskunde - april 2024</title>
         <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
     </head>
 
@@ -23,7 +23,7 @@
             <p>This is where the explanation goes</p>
         </div>
     </div>
-    <button class="btn" id="next-btn">Next Card</button>
+    <button class="btn" id="next-btn">volgende</button>
 
 </div>
 
@@ -44,6 +44,11 @@
     });
 
     function showNextCard() {
+        // Always display the front side when showing a new card
+        front.style.display = "block";
+        back.style.display = "none";
+        
+        // Update content of the front side with the new card
         currentCardIndex = Math.floor(Math.random() * flashcards.length);
         front.textContent = flashcards[currentCardIndex].concept;
         back.textContent = flashcards[currentCardIndex].explanation;
