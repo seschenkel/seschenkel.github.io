@@ -42,20 +42,22 @@ header, footer {
     padding: 10px;
     text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column; /* Adjusted to display links on separate lines */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
 }
 #index-nav a {
     text-decoration: none;
     color: #333;
     padding: 10px 20px;
     border-radius: 5px;
-    margin: 0 10px;
+    margin: 10px; /* Adjusted to add space between links */
     font-size: 1.2rem;
 }
 #index-nav a:hover {
     background-color: #ccc;
 }
+
 
 /* Aardrijkskunde Page */
 .flashcard-container {
