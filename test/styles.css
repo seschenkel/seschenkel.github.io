@@ -156,9 +156,13 @@ footer {
 
 /* Dropdown Styles */
 .dropdown-container {
-    position: relative;
-    width: 200px; /* Set your desired width */
-    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .dropdown-button {
