@@ -157,7 +157,7 @@ footer {
 /* Dropdown Styles */
 .dropdown-container {
     position: relative;
-    width: 100%;
+    width: 200px; /* Set your desired width */
     margin-bottom: 20px;
 }
 
@@ -182,7 +182,7 @@ footer {
     border: 1px solid #004d98;
     border-radius: 5px;
     padding: 10px;
-    width: calc(100% - 22px);
+    width: 200px; /* Set your desired width */
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
@@ -207,18 +207,4 @@ footer {
 
 .dropdown-container.open .dropdown-options {
     display: block;
-}
-
-.dropdown-container select.dropdown-button {
-    appearance: none;
-    -webkit-appearance: none;
-    background-color: #004d98;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 1.2rem;
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
 }

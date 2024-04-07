@@ -76,7 +76,7 @@ $(document).ready(function(){
     }
 
     // Play button functionality
-    $(document).on('click', '#playButton', function() {
+    $('#playButton').on('click', function() {
         if(audio) {
             window.speechSynthesis.speak(audio);
             $('#correctAnswer').hide(); // Hide correct answer initially
@@ -92,14 +92,12 @@ $(document).ready(function(){
     });
 
     // Next button functionality
-    $(document).on('click', '#nextButton', function() {
+    $('#nextButton').on('click', function() {
         showNextWord();
         clearTimeout(showAnswerTimeout); // Clear the timeout if Next button is clicked
     });
 });
-
-
-    </script>
+</script>
     
 </head>
 <body>
@@ -127,6 +125,7 @@ $(document).ready(function(){
 <footer>
     <nav id="index-nav">
         <a href="index.html">terug</a>
-    </nav></footer>
+    </nav>
+</footer>
 </body>
 </html>
