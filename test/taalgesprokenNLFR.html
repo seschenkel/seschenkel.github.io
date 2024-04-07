@@ -29,7 +29,7 @@ $(document).ready(function(){
     $('#correctAnswer').hide();
 
     // Gets JSON data
-    $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
+    $.getJSON("taalgesprokenNLFR.json", function(data) {
         words = data;
         showNextWord();
     }).fail(function(jqxhr, textStatus, error) {
