@@ -215,11 +215,24 @@ footer {
 
 /* Custom styling for word and translation */
 #word {
-    font-size: 2em; /* Set your desired font size */
+    font-size: 1,2em; /* Set your desired font size */
     margin-bottom: 20px; /* Add some space between the word and the translation */
 }
 
 #correctAnswer {
-    font-size: 2em; /* Set your desired font size */
+    font-size: 1,2em; /* Set your desired font size */
+    margin-bottom: 20px; /* Add some space between the word and the translation */
+    display: none; /* Hide the correct answer initially */
+}
+
+#wordToTranslate {
+    font-size: 1,2em; /* Set your desired font size */
+    margin-bottom: 20px; /* Add some space between the word and the translation */
+}
+
+
+resultMessage{
+    font-size: 1,2em; /* Set your desired font size */
+    margin-bottom: 20px; /* Add some space between the word and the translation */
     display: none; /* Hide the correct answer initially */
 }
