@@ -4,61 +4,77 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Language Learning</title>
+<link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    $(document).ready(function(){
-        var words = [];
-        var currentWordIndex = -1;
-        var languages = { "nl": "dutch", "fr": "french" };
-        var currentLang = "nl"; // Default language
-        var audio; // Declared at this scope to make it accessible by other functions.
-    
-        $(document).on('click', '.dropdown-button', function(){
-            $(this).parent().toggleClass('open');
-        });
-    
-        $(document).on('click', '.dropdown-options li', function(){
-            currentLang = $(this).attr('id');
-            $('.dropdown-button').text($(this).text()).parent().removeClass('open');
-            showNextWord();
-        });
-    
-        // Hide correct answer until word is played
-        $('#correctAnswer').hide();
-    
-        // Gets JSON data
-        $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
-            words = data;
-            showNextWord();
-        }).fail(function(jqxhr, textStatus, error) {
-            var err = textStatus + ", " + error;
-            console.error( "Error loading JSON: " + err );
-        });
-    
-        // Show next word
-        function showNextWord() {
-            currentWordIndex++;
-            if (currentWordIndex >= words.length) {
-                currentWordIndex = 0;
-                // Shuffle words for better learning experience
-                words.sort(() => Math.random() - 0.5);
-            }
-            var word = words[currentWordIndex];
-            var text = word[languages[currentLang]];
-            var lang = currentLang;
-    
-            // Speech Synthesis
-            if(window.speechSynthesis) {
-                audio = new SpeechSynthesisUtterance(text);
-                audio.lang = lang;
-            } else {
-                console.error("Speech synthesis not supported.");
-            }
-    
-            $('#word').text(text);
-            $('#correctAnswer').hide(); // Hide correct answer for the new word
-            $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
+$(document).ready(function(){
+    var words = [];
+    var currentWordIndex = -1;
+    var languages = { "nl": "dutch", "fr": "french" };
+    var currentLang = "nl"; // Default language
+    var audio; // Declared at this scope to make it accessible by other functions.
+
+    $(document).on('click', '.dropdown-button', function(){
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).on('click', '.dropdown-options li', function(){
+        currentLang = $(this).attr('id');
+        $('.dropdown-button').text($(this).text()).parent().removeClass('open');
+        showNextWord();
+    });
+
+    // Hide correct answer until word is played
+    $('#correctAnswer').hide();
+
+    // Gets JSON data
+    $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
+        words = data;
+        showNextWord();
+    }).fail(function(jqxhr, textStatus, error) {
+        var err = textStatus + ", " + error;
+        console.error( "Error loading JSON: " + err );
+    });
+
+    // Show next word
+    function showNextWord() {
+        if (words.length === 0) {
+            console.error("No words loaded.");
+            return;
         }
+
+        // Shuffle the words array
+        shuffleArray(words);
+
+        currentWordIndex = 0;
+        var word = words[currentWordIndex];
+        var text = word[languages[currentLang]];
+        var lang = currentLang;
+
+        // Speech Synthesis
+        if(window.speechSynthesis) {
+            audio = new SpeechSynthesisUtterance(text);
+            audio.lang = lang;
+        } else {
+            console.error("Speech synthesis not supported.");
+        }
+
+        $('#word').text(text);
+        $('#correctAnswer').hide(); // Hide correct answer for the new word
+        $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
+    }
+
+    // Function to shuffle array elements
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
+
     
         // Play button functionality
         $('#playButton').on('click', function() {
@@ -81,24 +97,32 @@
     
 </head>
 <body>
-    <header>
-        <h1>Zelf je kennis testen!</h1>
-    </header>
+<header>
+    <h1>Zelf je kennis testen!</h1>
+</header>
 <div class="dropdown-container">
-    <button type="button" class="dropdown-button">Select Language</button>
-    <div class="dropdown-options">
-        <ul>
-            <li id="nl">Dutch - French</li>
-            <li id="fr">French - Dutch</li>
-        </ul>
-    </div>
+    <button type="button" class="dropdown-button">Select Language</button>
+    <div class="dropdown-options">
+        <ul>
+            <li id="nl">Dutch - French</li>
+            <li id="fr">French - Dutch</li>
+        </ul>
+    </div>
 </div>
-<div id="word"></div>
-<button id="playButton">Play</button>
-<div id="correctAnswer"></div>
-<button id="nextButton">Next</button>
+<div class="container">
+    <div id="wordContainer">
+        <div id="word"></div>
+        <input type="text" id="translationInput" placeholder="Enter translation">
+        <button class="button" id="checkButton">Check</button>
+        <div id="correctAnswer"></div>
+        <button class="button" id="nextButton">Next</button>
+    </div>
+</div>
 <nav id="index-nav">
-    <a href="index.html">terug</a>
+    <a href="index.html">terug</a>
 </nav>
+<footer>
+    &copy; 2024 Your Son's Learning Website
+</footer>
 </body>
 </html>
