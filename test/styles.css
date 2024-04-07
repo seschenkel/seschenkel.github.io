@@ -164,20 +164,16 @@ footer {
     justify-content: center; /* Center the dropdown horizontally */
 }
 
-.dropdown-options {
-    display: none;
-    position: absolute;
-    top: 100%;
-    background-color: #fff;
-    border: 1px solid #004d98;
+.dropdown-button {
+    background-color: #004d98;
+    color: #fff;
+    border: none;
     border-radius: 5px;
-    padding: 10px;
-    width: 200px; /* Set your desired width */
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1000;
-    left: 50%; /* Position the dropdown options relative to the center */
-    transform: translateX(-50%); /* Adjust the position to center horizontally */
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    width: 300px;
+    cursor: pointer;
+    text-align: center;
 }
 
 
@@ -224,7 +220,6 @@ footer {
 }
 
 #correctAnswer {
-    font-size: 1.2em; /* Set your desired font size */
-    color: #999; /* Change the color to differentiate from the word */
+    font-size: 2em; /* Set your desired font size */
     display: none; /* Hide the correct answer initially */
 }
