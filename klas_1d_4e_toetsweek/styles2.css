@@ -129,39 +129,27 @@ footer {
     margin-bottom: 20px;
     box-sizing: border-box;
 }
-
-.button, #nextButton, #playButton {
-    width: 150px; /* Set your desired width */
-    height: 40px; /* Set your desired height */
-}
-
-/* Additional styling */
-.button, #nextButton, #playButton {
-    margin-top: 20px;
-    padding: 10px 20px;
+.button, #nextBtn, .btn {
     background-color: #004d98;
     color: #fff;
     border: none;
     border-radius: 5px;
+    padding: 10px 20px;
     font-size: 1.2rem;
     cursor: pointer;
     display: block;
-    text-align: center;
+    margin-top: 20px;
+    width: calc(100% - 40px);
 }
-
-.button:hover, #nextButton:hover, #playButton:hover {
+.button:hover, #nextBtn:hover, .btn:hover {
     background-color: #002450;
 }
 
-
 /* Dropdown Styles */
-
 .dropdown-container {
     position: relative;
-    width: 100%; /* Change width to 100% to take the full width of the container */
+    width: 100%;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: center; /* Center the dropdown horizontally */
 }
 
 .dropdown-button {
@@ -171,11 +159,10 @@ footer {
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 1.2rem;
-    width: 300px;
+    width: 100%;
     cursor: pointer;
     text-align: center;
 }
-
 
 .dropdown-options {
     display: none;
@@ -186,7 +173,7 @@ footer {
     border: 1px solid #004d98;
     border-radius: 5px;
     padding: 10px;
-    width: 200px; /* Set your desired width */
+    width: calc(100% - 22px);
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
@@ -213,13 +200,16 @@ footer {
     display: block;
 }
 
-/* Custom styling for word and translation */
-#word {
-    font-size: 2em; /* Set your desired font size */
-    margin-bottom: 20px; /* Add some space between the word and the translation */
-}
-
-#correctAnswer {
-    font-size: 2em; /* Set your desired font size */
-    display: none; /* Hide the correct answer initially */
+.dropdown-container select.dropdown-button {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #004d98;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
 }
