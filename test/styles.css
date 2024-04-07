@@ -158,8 +158,9 @@ footer {
 
 .dropdown-container {
     position: relative;
-    width: 100%;
+    width: 600px;
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 
