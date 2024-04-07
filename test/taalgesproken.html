@@ -76,7 +76,7 @@ $(document).ready(function(){
     }
 
     // Play button functionality
-    $('#playButton').on('click', function() {
+    $(document).on('click', '#playButton', function() {
         if(audio) {
             window.speechSynthesis.speak(audio);
             $('#correctAnswer').hide(); // Hide correct answer initially
@@ -92,11 +92,12 @@ $(document).ready(function(){
     });
 
     // Next button functionality
-    $('#nextButton').on('click', function() {
+    $(document).on('click', '#nextButton', function() {
         showNextWord();
         clearTimeout(showAnswerTimeout); // Clear the timeout if Next button is clicked
     });
 });
+
 
     </script>
     
