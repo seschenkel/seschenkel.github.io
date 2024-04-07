@@ -231,7 +231,7 @@ footer {
 }
 
 
-resultMessage{
+#resultMessage{
     font-size: 1,2em; /* Set your desired font size */
     margin-bottom: 20px; /* Add some space between the word and the translation */
     display: none; /* Hide the correct answer initially */
