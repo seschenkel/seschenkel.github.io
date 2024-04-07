@@ -158,24 +158,28 @@ footer {
 
 .dropdown-container {
     position: relative;
-    width: 600px;
+    width: 100%; /* Change width to 100% to take the full width of the container */
     margin-bottom: 20px;
-    justify-content: center;
-    align-items: center;
+    display: flex;
+    justify-content: center; /* Center the dropdown horizontally */
 }
 
-
-.dropdown-button {
-    background-color: #004d98;
-    color: #fff;
-    border: none;
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: #fff;
+    border: 1px solid #004d98;
     border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    width: 100%;
-    cursor: pointer;
-    text-align: center;
+    padding: 10px;
+    width: 200px; /* Set your desired width */
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    left: 50%; /* Position the dropdown options relative to the center */
+    transform: translateX(-50%); /* Adjust the position to center horizontally */
 }
+
 
 .dropdown-options {
     display: none;
@@ -211,4 +215,16 @@ footer {
 
 .dropdown-container.open .dropdown-options {
     display: block;
+}
+
+/* Custom styling for word and translation */
+#word {
+    font-size: 2em; /* Set your desired font size */
+    margin-bottom: 20px; /* Add some space between the word and the translation */
+}
+
+#correctAnswer {
+    font-size: 1.2em; /* Set your desired font size */
+    color: #999; /* Change the color to differentiate from the word */
+    display: none; /* Hide the correct answer initially */
 }
