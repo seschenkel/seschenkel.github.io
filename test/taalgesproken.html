@@ -77,7 +77,7 @@ $(document).ready(function(){
 
     // Play button functionality
     $('#playButton').on('click', function() {
-        if(audio) {
+        if(window.speechSynthesis && audio) { // Check if speech synthesis is supported and audio is initialized
             window.speechSynthesis.speak(audio);
             $('#correctAnswer').hide(); // Hide correct answer initially
             clearTimeout(showAnswerTimeout); // Clear any existing timeout
@@ -87,7 +87,7 @@ $(document).ready(function(){
                 $('#nextButton').show(); // Show the "Next" button after 5 seconds
             }, 5000);
         } else {
-            console.error("Audio not available.");
+            console.error("Audio not available or not initialized.");
         }
     });
 
