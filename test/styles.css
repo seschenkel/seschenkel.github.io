@@ -155,15 +155,13 @@ footer {
 
 
 /* Dropdown Styles */
+
 .dropdown-container {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
 }
+
 
 .dropdown-button {
     background-color: #004d98;
