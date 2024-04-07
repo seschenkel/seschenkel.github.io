@@ -9,7 +9,7 @@
 $(document).ready(function(){
     var words = [];
     var currentWordIndex = -1;
-    var languages = { "nl": "dutch", "fr": "english" };
+    var languages = { "nl": "dutch", "fr": "french" };
     var currentLang = "nl"; // Default language
     var audio; // Declared at this scope to make it accessible by other functions.
  
@@ -69,8 +69,8 @@ $(document).ready(function(){
     <button type="button" class="dropdown-button">Select Language</button>
     <div class="dropdown-options">
         <ul>
-            <li id="nl">Dutch - English</li>
-            <li id="fr">English - French</li>
+            <li id="nl">Dutch - French</li>
+            <li id="fr">French - Dutch</li>
         </ul>
     </div>
 </div>
