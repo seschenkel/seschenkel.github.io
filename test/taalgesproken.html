@@ -39,31 +39,37 @@ $(document).ready(function(){
 
     // Show next word
     function showNextWord() {
-        if (words.length === 0) {
-            console.error("No words loaded.");
-            return;
-        }
-
-        // Shuffle the words array
-        shuffleArray(words);
-
-        currentWordIndex = 0;
-        var word = words[currentWordIndex];
-        var text = word[languages[currentLang]];
-        var lang = currentLang;
-
-        // Speech Synthesis
-        if(window.speechSynthesis) {
-            audio = new SpeechSynthesisUtterance(text);
-            audio.lang = lang;
-        } else {
-            console.error("Speech synthesis not supported.");
-        }
-
-        $('#word').text(text);
-        $('#correctAnswer').hide(); // Hide correct answer for the new word
-        $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
+    if (words.length === 0) {
+        console.error("No words loaded.");
+        return;
     }
+
+    // Shuffle the words array
+    shuffleArray(words);
+
+    currentWordIndex = 0;
+    var word = words[currentWordIndex];
+    var text = word[languages[currentLang]];
+    var lang = currentLang;
+
+    // Get the translation in the other language for the correct answer
+    var otherLang = currentLang === "nl" ? "fr" : "nl";
+    var correctTranslation = word[languages[otherLang]];
+
+    // Speech Synthesis
+    if(window.speechSynthesis) {
+        audio = new SpeechSynthesisUtterance(text);
+        audio.lang = lang;
+    } else {
+        console.error("Speech synthesis not supported.");
+    }
+
+    $('#word').text(text);
+    $('#correctAnswer').text(correctTranslation); // Set the correct answer text
+    $('#correctAnswer').hide(); // Hide correct answer for the new word
+    $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
+}
+
 
     // Function to shuffle array elements
     function shuffleArray(array) {
