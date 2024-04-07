@@ -112,7 +112,7 @@ main {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: orangered;
+    background-color: #f0f0f0;
 }
 #wordContainer {
     width: 100%;
