@@ -6,60 +6,79 @@
 <title>Language Learning</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-$(document).ready(function(){
-    var words = [];
-    var currentWordIndex = -1;
-    var languages = { "nl": "dutch", "fr": "french" };
-    var currentLang = "nl"; // Default language
-    var audio; // Declared at this scope to make it accessible by other functions.
- 
-    $(document).on('click', '.dropdown-button', function(){
-        $(this).parent().toggleClass('open');
-    });
-
-    $(document).on('click', '.dropdown-options li', function(){
-        currentLang = $(this).attr('id');
-        $('.dropdown-button').text($(this).text()).parent().removeClass('open');
-        showNextWord();
-    });
-
-    // Hide correct answer until word is played
-    $('#correctAnswer').hide();
- 
-    // Gets JSON data
-    $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
-        words = data;
-        showNextWord();
-    }).fail(function(jqxhr, textStatus, error) {
-        var err = textStatus + ", " + error;
-        console.error( "Error loading JSON: " + err );
-    });
-
-    // Show next word
-    function showNextWord() {
-        currentWordIndex++;
-        if (currentWordIndex >= words.length) {
-            currentWordIndex = 0;
-        }
-        var word = words[currentWordIndex];
-        var text = word[languages[currentLang]];
-        var lang = currentLang;
-
-        // Speech Synthesis
-        if(window.speechSynthesis) {
-            audio = new SpeechSynthesisUtterance(text);
-            audio.lang = lang;
-        } else {
-            console.error("Speech synthesis not supported.");
-        }
-
-        $('#word').text(text);
-
-        $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
-    }
-
-});
-</script>
+    $(document).ready(function(){
+        var words = [];
+        var currentWordIndex = -1;
+        var languages = { "nl": "dutch", "fr": "french" };
+        var currentLang = "nl"; // Default language
+        var audio; // Declared at this scope to make it accessible by other functions.
+    
+        $(document).on('click', '.dropdown-button', function(){
+            $(this).parent().toggleClass('open');
+        });
+    
+        $(document).on('click', '.dropdown-options li', function(){
+            currentLang = $(this).attr('id');
+            $('.dropdown-button').text($(this).text()).parent().removeClass('open');
+            showNextWord();
+        });
+    
+        // Hide correct answer until word is played
+        $('#correctAnswer').hide();
+    
+        // Gets JSON data
+        $.getJSON("Joep_toestweek_april_Frans_2024.json", function(data) {
+            words = data;
+            showNextWord();
+        }).fail(function(jqxhr, textStatus, error) {
+            var err = textStatus + ", " + error;
+            console.error( "Error loading JSON: " + err );
+        });
+    
+        // Show next word
+        function showNextWord() {
+            currentWordIndex++;
+            if (currentWordIndex >= words.length) {
+                currentWordIndex = 0;
+                // Shuffle words for better learning experience
+                words.sort(() => Math.random() - 0.5);
+            }
+            var word = words[currentWordIndex];
+            var text = word[languages[currentLang]];
+            var lang = currentLang;
+    
+            // Speech Synthesis
+            if(window.speechSynthesis) {
+                audio = new SpeechSynthesisUtterance(text);
+                audio.lang = lang;
+            } else {
+                console.error("Speech synthesis not supported.");
+            }
+    
+            $('#word').text(text);
+            $('#correctAnswer').hide(); // Hide correct answer for the new word
+            $('#nextButton').hide(); // Hide the "Next" button until the word is played at least once
+        }
+    
+        // Play button functionality
+        $('#playButton').on('click', function() {
+            if(audio) {
+                window.speechSynthesis.speak(audio);
+                $('#correctAnswer').show(); // Show correct answer after playing the word
+                $('#nextButton').show(); // Show the "Next" button after playing the word
+            } else {
+                console.error("Audio not available.");
+            }
+        });
+    
+        // Next button functionality
+        $('#nextButton').on('click', function() {
+            showNextWord();
+        });
+    
+    });
+    </script>
+    
 </head>
 <body>
     <header>
