@@ -14,6 +14,7 @@ $(document).ready(function(){
     var currentLang = "nl"; // Default language
     var audio; // Declared at this scope to make it accessible by other functions.
     var showAnswerTimeout; // Variable to hold the timeout ID
+    var translation; // Declaring translation variable here to make it accessible globally
 
     $(document).on('click', '.dropdown-button', function(){
         $(this).parent().toggleClass('open');
@@ -50,7 +51,7 @@ $(document).ready(function(){
         currentWordIndex = 0;
         var word = words[currentWordIndex];
         var text = word[languages[currentLang]];
-        var translation = word[currentLang];
+        translation = word[currentLang]; // Assigning the translation here
 
         $('#word').text(text);
         $('#correctAnswer').hide(); // Hide correct answer for the new word
