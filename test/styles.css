@@ -129,21 +129,30 @@ footer {
     margin-bottom: 20px;
     box-sizing: border-box;
 }
-.button, #nextBtn, .btn {
+
+.button, #nextButton, #playButton {
+    width: 150px; /* Set your desired width */
+    height: 40px; /* Set your desired height */
+}
+
+/* Additional styling */
+.button, #nextButton, #playButton {
+    margin-top: 20px;
+    padding: 10px 20px;
     background-color: #004d98;
     color: #fff;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
     font-size: 1.2rem;
     cursor: pointer;
     display: block;
-    margin-top: 20px;
-    width: calc(100% - 40px);
+    text-align: center;
 }
-.button:hover, #nextBtn:hover, .btn:hover {
+
+.button:hover, #nextButton:hover, #playButton:hover {
     background-color: #002450;
 }
+
 
 /* Dropdown Styles */
 .dropdown-container {
