@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aardrijkskunde - april 2024</title>
-        <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
-    </head>
-
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nederlands - april 2024</title>
+<link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
+</head>
 <body>
     <header id="index-header">
-        <h1>Aardrijkskunde</h1>
+        <h1>Nederlands</h1>
     </header>
-
 <div class="flashcard-container">
     <div class="flashcard">
         <div class="front">
@@ -36,7 +34,7 @@
     let currentCardIndex = -1;
     let flashcards = [];
 
-    fetch('aardrijkskunde.json')
+    fetch('nederlands.json')
     .then(response => response.json())
     .then(data => {
         flashcards = data;
