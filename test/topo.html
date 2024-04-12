@@ -8,8 +8,8 @@
         #map {
             position: relative;
             width: 1200px; /* Adjust width and height as needed */
-            height: 1204px; /* Adjust width and height as needed */
-            background-image: url('Europe_map.png'); /* Replace with your map image */
+            height: 1200px; /* Adjust width and height as needed */
+            background-image: url('europe_map.jpg'); /* Replace with your map image */
             background-size: cover;
         }
         .city {
@@ -18,9 +18,11 @@
             height: 10px; /* Adjust dot size as needed */
             background-color: red; /* Adjust dot color as needed */
             border-radius: 50%;
-            display: none;
         }
         #city-name {
+            display: none;
+        }
+        #next-button {
             display: none;
         }
     </style>
@@ -55,6 +57,7 @@
                     map.appendChild(cityDot);
 
                     setTimeout(() => {
+                        cityDot.style.display = 'block'; // Show the dot for the city
                         cityName.textContent = city.name;
                         cityName.style.display = 'block';
                         nextButton.style.display = 'block';
