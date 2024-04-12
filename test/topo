@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe Topography Learning</title>
+    <style>
+        #map {
+            position: relative;
+            width: 1200px; /* Adjust width and height as needed */
+            height: 1204px; /* Adjust width and height as needed */
+            background-image: url('Europe_map.png'); /* Replace with your map image */
+            background-size: cover;
+        }
+        .city {
+            position: absolute;
+            width: 10px; /* Adjust dot size as needed */
+            height: 10px; /* Adjust dot size as needed */
+            background-color: red; /* Adjust dot color as needed */
+            border-radius: 50%;
+            display: none;
+        }
+        #city-name {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <!-- Cities will be dynamically added here -->
+    </div>
+    <div id="city-name"></div>
+    <button id="next-button">Next</button>
+
+    <script>
+        // Load cities data from JSON
+        fetch('europe_cities.json')
+            .then(response => response.json())
+            .then(data => {
+                const cities = data.cities;
+
+                const map = document.getElementById('map');
+                const cityName = document.getElementById('city-name');
+                const nextButton = document.getElementById('next-button');
+
+                let currentIndex = -1;
+
+                function showNextCity() {
+                    currentIndex = (currentIndex + 1) % cities.length;
+                    const city = cities[currentIndex];
+                    const cityDot = document.createElement('div');
+                    cityDot.classList.add('city');
+                    cityDot.style.left = city.x + 'px';
+                    cityDot.style.top = city.y + 'px';
+                    map.appendChild(cityDot);
+
+                    setTimeout(() => {
+                        cityName.textContent = city.name;
+                        cityName.style.display = 'block';
+                        nextButton.style.display = 'block';
+                    }, 5000);
+                }
+
+                nextButton.addEventListener('click', () => {
+                    document.querySelectorAll('.city').forEach(city => city.remove());
+                    cityName.style.display = 'none';
+                    nextButton.style.display = 'none';
+                    showNextCity();
+                });
+
+                showNextCity();
+            });
+    </script>
+</body>
+</html>
