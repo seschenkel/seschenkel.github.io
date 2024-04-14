@@ -35,11 +35,21 @@
     <button id="next-button">Next</button>
 
     <script>
+        // Function to shuffle array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
         // Load cities data from JSON
         fetch('europe_cities.json')
             .then(response => response.json())
             .then(data => {
-                const cities = data.cities;
+                let cities = data.cities;
+                cities = shuffleArray(cities); // Shuffle the array of cities
 
                 const map = document.getElementById('map');
                 const cityName = document.getElementById('city-name');
