@@ -259,6 +259,7 @@ footer {
 }
 #city-name {
     position: absolute;
+    font-size: 1,2em;
     display: none;
     background-color: rgba(255, 255, 255, 0.8); /* Adjust background color and opacity */
     padding: 5px;
@@ -266,7 +267,7 @@ footer {
 }
 
 #next-button-topo {
-    font-size: 1,2em;
+    font-size: 1,4em;
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #004d98;
