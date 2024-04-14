@@ -236,3 +236,30 @@ footer {
     margin-bottom: 20px; /* Add some space between the word and the translation */
     display: none; /* Hide the correct answer initially */
 }
+#map {
+    position: relative;
+    width: 1000px; /* Adjust width and height as needed */
+    height: 997px; /* Adjust width and height as needed */
+    background-image: url('europe_map.jpg'); /* Replace with your map image */
+    background-size: cover;
+}
+.city {
+    position: absolute;
+    width: 10px; /* Adjust dot size as needed */
+    height: 10px; /* Adjust dot size as needed */
+    background-color: red; /* Adjust dot color as needed */
+    border-radius: 50%;
+}
+#city-name {
+    display: none;
+}
+#next-button-topo {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #004d98;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}

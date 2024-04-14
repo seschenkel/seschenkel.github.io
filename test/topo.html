@@ -4,35 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Europe Topography Learning</title>
-    <style>
-        #map {
-            position: relative;
-            width: 1000px; /* Adjust width and height as needed */
-            height: 997px; /* Adjust width and height as needed */
-            background-image: url('europe_map.jpg'); /* Replace with your map image */
-            background-size: cover;
-        }
-        .city {
-            position: absolute;
-            width: 10px; /* Adjust dot size as needed */
-            height: 10px; /* Adjust dot size as needed */
-            background-color: red; /* Adjust dot color as needed */
-            border-radius: 50%;
-        }
-        #city-name {
-            display: none;
-        }
-        #next-button {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"
 </head>
 <body>
     <div id="map">
         <!-- Cities will be dynamically added here -->
     </div>
     <div id="city-name"></div>
-    <button id="next-button">Next</button>
+    <button id="next-button-topo">Next</button>
 
     <script>
         // Function to shuffle array
