@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css"
 </head>
 <body>
-    <div id="map">
+    <div id="map-europe">
         <!-- Cities will be dynamically added here -->
     </div>
     <div id="city-name"></div>
@@ -46,8 +46,9 @@
                     map.appendChild(cityDot);
 
                     setTimeout(() => {
-                        cityDot.style.display = 'block'; // Show the dot for the city
                         cityName.textContent = city.name;
+                        cityName.style.left = (city.x + 10) + 'px'; // Adjust positioning of city name
+                        cityName.style.top = (city.y + 10) + 'px'; // Adjust positioning of city name
                         cityName.style.display = 'block';
                         nextButton.style.display = 'block';
                     }, 5000);

@@ -236,7 +236,7 @@ footer {
     margin-bottom: 20px; /* Add some space between the word and the translation */
     display: none; /* Hide the correct answer initially */
 }
-#map {
+#map-europe {
     position: relative;
     width: 1000px; /* Adjust width and height as needed */
     height: 997px; /* Adjust width and height as needed */
@@ -250,10 +250,23 @@ footer {
     background-color: red; /* Adjust dot color as needed */
     border-radius: 50%;
 }
-#city-name {
-    display: none;
+#city-info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
+#city-name {
+    position: absolute;
+    display: none;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust background color and opacity */
+    padding: 5px;
+    border-radius: 5px;
+}
+
 #next-button-topo {
+    font-size: 1,2em;
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #004d98;
