@@ -275,4 +275,9 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     display: none;
+    position: fixed; /* Position relative to the viewport */
+    bottom: 20px; /* Adjust as needed */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center horizontally */
+    display: none;
 }
