@@ -1,0 +1,174 @@
+[
+    {
+        "concept": "analfabetisme",
+        "explanation": "Het percentage van de bevolking ouder dan 15 jaar dat niet kan lezen en schrijven."
+    },
+    {
+        "concept": "artsendichtheid",
+        "explanation": "Het aantal artsen per duizend inwoners."
+    },
+    {
+        "concept": "basisbehoefte",
+        "explanation": "Iets wat iedereen echt nodig heeft om redelijk te kunnen leven, zoals voedsel, huisvesting, onderwijs en gezondheidszorg."
+    },
+    {
+        "concept": "bevolkingsdiagram",
+        "explanation": "Diagram dat de leeftijdsopbouw van de bevolking weergeeft."
+    },
+    {
+        "concept": "bevolkingsdichtheid",
+        "explanation": "Het gemiddelde aantal inwoners per km²."
+    },
+    {
+        "concept": "bap per inwoner",
+        "explanation": "Het gemiddelde inkomen per inwoner per jaar. Je berekent het door het bnp te delen door het aantal inwoners van een gebied."
+    },
+    {
+        "concept": "biodiversiteit",
+        "explanation": "Variatie aan levensvormen in de natuur."
+    },
+    {
+        "concept": "bio-ethanol",
+        "explanation": "Soort alcohol uit suikermet die gebruikt wordt als brandstof voor auto's."
+    },
+    {
+        "concept": "BRICS-landen",
+        "explanation": "Verzamelnaam voor de vijf opkomende landen Brazilië, Rusland, India, China en Zuid-Afrika."
+    },
+    {
+        "concept": "corrupt",
+        "explanation": "Als iemand stiekem geld aanneemt en in ruil daarvoor mensen voortrekt of diensten bewijst. Een ander woord hiervoor is omkoping."
+    },
+    {
+        "concept": "debat",
+        "explanation": "Gesprek tussen mensen die het niet met elkaar eens zijn."
+    },
+    {
+        "concept": "duurzaam",
+        "explanation": "Ervoor zorgen dat iets altijd blijft bestaan."
+    },
+    {
+        "concept": "favela",
+        "explanation": "Braziliaanse naam voor een krottenwijk."
+    },
+    {
+        "concept": "gated community",
+        "explanation": "Zwaarbewaakte woonwijk met een hoge muur of een hek eromheen."
+    },
+    {
+        "concept": "globalisering",
+        "explanation": "Het doorgaande proces van internationale uitwisseling van mensen, goederen, geld en informatie (kennis, cultuur)."
+    },
+    {
+        "concept": "grondstof",
+        "explanation": "Ruw materiaal (zoals ijzererts of cacaobonen) dat nog bewerkt moet worden om er een product van te maken."
+    },
+    {
+        "concept": "grootgrondbezitter",
+        "explanation": "Boer die veel grond in bezit heeft."
+    },
+    {
+        "concept": "herbebossing",
+        "explanation": "Het opnieuw aanplanten van jonge bomen na houtkap."
+    },
+    {
+        "concept": "hydro-elektriciteit",
+        "explanation": "Elektriciteit opgewekt door waterkracht."
+    },
+    {
+        "concept": "Inkomensongelijkheid",
+        "explanation": "Ongelijke verdeling van het bnp over de bevolking."
+    },
+    {
+        "concept": "klimaatverandering",
+        "explanation": "Als over een periode van zo'n dertig jaar de klimaatfactoren temperatuur of neerslag zijn veranderd."
+    },
+    {
+        "concept": "koopkracht",
+        "explanation": "Het aantal goederen en diensten dat je van je geld kunt kopen."
+    },
+    {
+        "concept": "krottenwijk",
+        "explanation": "Een zelfbouwwijk met slechte huizen, weinig voorzieningen en onzekerheid voor de bewoners of ze er mogen blijven wonen."
+    },
+    {
+        "concept": "leeftijdsopbouw",
+        "explanation": "De samenstelling van de bevolking in leeftijdsgroepen."
+    },
+    {
+        "concept": "middenklasse",
+        "explanation": "Groep mensen met een gemiddeld inkomen: ze zijn niet rijk en niet arm."
+    },
+    {
+        "concept": "natuurlijke hulpbron",
+        "explanation": "Product uit de natuur dat mensen goed kunnen gebruiken."
+    },
+    {
+        "concept": "ontbossing",
+        "explanation": "Het kappen van bossen."
+    },
+    {
+        "concept": "ontwikkeld land",
+        "explanation": "Land met een hoog ontwikkelingspeil."
+    },
+    {
+        "concept": "ontwikkelingskenmerk",
+        "explanation": "Kenmerk waarmee je de armoede of de rijkdom in een gebied kunt meten."
+    },
+    {
+        "concept": "ontwikkelingsland",
+        "explanation": "Arm land met een laag ontwikkelingspeil."
+    },
+    {
+        "concept": "opkomend land",
+        "explanation": "Land dat nog niet echt ontwikkeld is, maar dat wel een snelle economische groei doormaakt."
+    },
+    {
+        "concept": "regionale ongelijkheid",
+        "explanation": "Verschillen in welvaart tussen het ene en het andere gebied."
+    },
+    {
+        "concept": "reliëf",
+        "explanation": "Hoogteverschillen in het landschap."
+    },
+    {
+        "concept": "savanne",
+        "explanation": "Landschap in de tropen met lange grassen, afgewisseld met groepjes bomen en struiken."
+    },
+    {
+        "concept": "sociale ongelijkheid",
+        "explanation": "Verschillen in welvaart tussen verschillende groepen mensen in een gebied."
+    },
+    {
+        "concept": "steppe",
+        "explanation": "Droog gebied waar net genoeg regen valt voor de groei van grassen en lage struikjes."
+    },
+    {
+        "concept": "tropisch regenwoud",
+        "explanation": "Dicht, ondoordringbaar bos in de warme en vochtige tropen."
+    },
+    {
+        "concept": "urbanisatiegraad",
+        "explanation": "Het percentage stedelingen in een land."
+    },
+    {
+        "concept": "urbanisatietempo",
+        "explanation": "De snelheid waarmee de urbanisatiegraad toeneemt."
+    },
+    {
+        "concept": "verstedelijking",
+        "explanation": "Het proces waarbij steeds meer mensen in de stad gaan wonen."
+    },
+    {
+        "concept": "waterkracht",
+        "explanation": "Opwekking van elektriciteit met behulp van vallend of stromend water."
+    },
+    {
+        "concept": "zelfbouwwijk",
+        "explanation": "Krottenwijk."
+    },
+    {
+        "concept": "zwerflandbouw",
+        "explanation": "Het na een bepaalde periode verplaatsen van een akker naar een nabijgelegen stuk land, omdat de bodem niet vruchtbaar genoeg is voor een permanente akker."
+    }
+]
