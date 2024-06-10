@@ -1,0 +1,215 @@
+/* Global Styles */
+html, body, ul {
+    margin: 0;
+    padding: 0;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+header, footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+/* Index Page */
+#index-header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+#index-nav {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Adjusted to display links on separate lines */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+#index-nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px; /* Adjusted to add space between links */
+    font-size: 1.2rem;
+}
+#index-nav a:hover {
+    background-color: #ccc;
+}
+
+
+/* Aardrijkskunde Page */
+.flashcard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.flashcard {
+    width: 300px;
+    height: 300px;
+    background-color: orangered;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s;
+    font-size: 1.5em;
+}
+.back {
+    display: none;
+}
+.show {
+    display: block;
+}
+.btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #004d98;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Taal Page */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+#wordContainer {
+    width: 100%;
+    margin-top: 20px;
+}
+#translationInput {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #000000;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(100% - 30px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+.button, #nextBtn, .btn {
+    background-color: #004d98;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    width: calc(100% - 40px);
+}
+.button:hover, #nextBtn:hover, .btn:hover {
+    background-color: #002450;
+}
+
+/* Dropdown Styles */
+.dropdown-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.dropdown-button {
+    background-color: #004d98;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #004d98;
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100% - 22px);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.dropdown-options ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-options li {
+    padding: 10px;
+    text-align: center;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.dropdown-options li:hover {
+    background-color: #e6e6e6;
+}
+
+.dropdown-container.open .dropdown-options {
+    display: block;
+}
+
+.dropdown-container select.dropdown-button {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #004d98;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
