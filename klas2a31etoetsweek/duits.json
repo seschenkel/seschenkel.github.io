@@ -1,0 +1,234 @@
+[
+  {
+    "concept": "adressendichtheid",
+    "explanation": "Het aantal adressen in een cirkel van een kilometer rond een bepaald area."
+  },
+  {
+    "concept": "agglomeratie",
+    "explanation": "Een stad met daaraan vastgegroeide voorsteden en dorpen."
+  },
+  {
+    "concept": "bedrijventerrein",
+    "explanation": "Een speciaal aangelegde wijk voor kantoren, showrooms, garages en andere bedrijven."
+  },
+  {
+    "concept": "binnenstad",
+    "explanation": "Het centrum van een stad."
+  },
+  {
+    "concept": "buurt",
+    "explanation": "Deel van een wijk."
+  },
+  {
+    "concept": "buurtprofiel",
+    "explanation": "Een soort paspoort van een buurt (woningen en bewoners)."
+  },
+  {
+    "concept": "centrale stad",
+    "explanation": "De belangrijkste stad in een stadsgewest."
+  },
+  {
+    "concept": "cultuurgebied",
+    "explanation": "Gebied met overeenkomsten in de cultuur."
+  },
+  {
+    "concept": "dagelijkse voorziening",
+    "explanation": "Voorziening waarvan je (bijna) dagelijks gebruikmaakt, zoals een supermarkt."
+  },
+  {
+    "concept": "dorp",
+    "explanation": "Een plaats waar weinig mensen wonen en waar de woningdichtheid laag is."
+  },
+  {
+    "concept": "dorpskern",
+    "explanation": "Het oude centrum van een dorp, met de kerk."
+  },
+  {
+    "concept": "eengezinswoning",
+    "explanation": "Een woning die bestemd is voor één gezin, maar waar ook een of twee mensen kunnen wonen."
+  },
+  {
+    "concept": "eigen omgeving",
+    "explanation": "Het gebied rond je eigen huis waar je bijna dagelijks komt."
+  },
+  {
+    "concept": "enquête",
+    "explanation": "Vragenlijst om de mening van een groep mensen te onderzoeken."
+  },
+  {
+    "concept": "gebied",
+    "explanation": "Een klein of groot stuk van het aardoppervlak."
+  },
+  {
+    "concept": "geboortecijfer",
+    "explanation": "Het aantal geboorten per duizend inwoners per jaar."
+  },
+  {
+    "concept": "geboorteoverschot",
+    "explanation": "Als er in een jaar meer mensen geboren worden dan dat er mensen sterven."
+  },
+  {
+    "concept": "gespecialiseerde voorziening",
+    "explanation": "Voorziening waar je maar (heel) weinig gebruik van maakt, zoals een musicaltheater."
+  },
+  {
+    "concept": "hoogbouw",
+    "explanation": "Zelfstandige woningen in een gebouw met meerdere woonlagen (meergezinswoningen)."
+  },
+  {
+    "concept": "huishouden",
+    "explanation": "Een of meer mensen die samen op één adres wonen."
+  },
+  {
+    "concept": "huurwoning",
+    "explanation": "Huis waarvan de bewoner zelf niet de eigenaar is, maar dat hij huurt van iemand anders."
+  },
+  {
+    "concept": "inrichting",
+    "explanation": "Het gebruik van de ruimte voor wonen, werken, verkeer en recreatie. Heet ook ruimtegebruik."
+  },
+  {
+    "concept": "koopwoning",
+    "explanation": "Huis waarvan de bewoner ook de eigenaar is."
+  },
+  {
+    "concept": "laagbouw",
+    "explanation": "Huizen met twee of drie verdiepingen (eengezinswoningen)."
+  },
+  {
+    "concept": "landelijk gebied",
+    "explanation": "Gebied met weinig bebouwing en veel open ruimte. Heet ook platteland."
+  },
+  {
+    "concept": "leeftijdsopbouw",
+    "explanation": "De samenstelling van een bevolking in verschillende leeftijdsgroepen."
+  },
+  {
+    "concept": "meergezinswoning",
+    "explanation": "Woning in een gebouw waar onder en/of boven andere mensen wonen."
+  },
+  {
+    "concept": "migratie",
+    "explanation": "Het verhuizen van de ene woonplaats naar een andere woonplaats."
+  },
+  {
+    "concept": "migratieachtergrond",
+    "explanation": "Een of beide ouders zijn in het buitenland geboren."
+  },
+  {
+    "concept": "multiculturele samenleving",
+    "explanation": "Het samenleven van mensen uit verschillende culturen."
+  },
+  {
+    "concept": "natuurlijke bevolkingsgroei",
+    "explanation": "Bevolkingsgroei door het aantal geboorten min het aantal sterfgevallen."
+  },
+  {
+    "concept": "niet-westerse migratieachtergrond",
+    "explanation": "Afkomstig uit een niet-westers cultuurgebied."
+  },
+  {
+    "concept": "oude woonwijk",
+    "explanation": "Stadswijk met een hoge woningdichtheid, gebouwd tussen 1870 en 1920."
+  },
+  {
+    "concept": "platteland",
+    "explanation": "Gebied met weinig bebouwing en veel open ruimte. Ook landelijk gebied."
+  },
+  {
+    "concept": "recreatie",
+    "explanation": "Alles wat je doet in je vrije tijd."
+  },
+  {
+    "concept": "renovatie",
+    "explanation": "Het opknappen van een huis."
+  },
+  {
+    "concept": "ruimtegebruik",
+    "explanation": "Het gebruik van de ruimte voor wonen, werken, verkeer en recreatie. Heet ook inrichting."
+  },
+  {
+    "concept": "ruimtelijke ordening",
+    "explanation": "Het maken van plannen over de inrichting van een gebied."
+  },
+  {
+    "concept": "sloop en nieuwbouw",
+    "explanation": "Slechte huizen afbreken en er nieuwe huizen voor in de plaats bouwen."
+  },
+  {
+    "concept": "stad",
+    "explanation": "Een concentratie van mensen en hun activiteiten op een bepaalde plek. Er is veel hoogbouw en de woningdichtheid is hoog."
+  },
+  {
+    "concept": "stadsgewest",
+    "explanation": "Stad met alle steden en dorpen eromheen die onderling veel contact hebben."
+  },
+  {
+    "concept": "stedelijk gebied",
+    "explanation": "Steden en stadsgewesten die dicht bij elkaar liggen."
+  },
+  {
+    "concept": "stedelijke vernieuwing",
+    "explanation": "Het vernieuwen van woonwijken in een stad."
+  },
+  {
+    "concept": "stedelijke voorziening",
+    "explanation": "Voorziening in een stad die kleine plaatsen niet hebben."
+  },
+  {
+    "concept": "sterftecijfer",
+    "explanation": "Het aantal sterfgevallen per duizend inwoners per jaar."
+  },
+  {
+    "concept": "sterfteoverschot",
+    "explanation": "Er gaan meer mensen dood dan dat er kinderen worden geboren."
+  },
+  {
+    "concept": "suburb",
+    "explanation": "Door suburbanisatie snel gegroeid dorp of stadje dichtbij een grote stad."
+  },
+  {
+    "concept": "suburbanisatie",
+    "explanation": "De verstedelijking van het platteland door migratie vanuit de stad."
+  },
+  {
+    "concept": "urbanisatie",
+    "explanation": "Stijging van het percentage mensen dat in een stad woont."
+  },
+  {
+    "concept": "veldwerk",
+    "explanation": "Activiteit waarbij je zelf bronnen verzamelt buiten de school."
+  },
+  {
+    "concept": "verstedelijking",
+    "explanation": "Stijging van het percentage mensen dat in een stad woont. Heet ook urbanisatie."
+  },
+  {
+    "concept": "verzorgingscentrum",
+    "explanation": "Stad met stedelijke voorzieningen die ook gebruikt worden door bewoners van omliggende plaatsen."
+  },
+  {
+    "concept": "verzorgingsgebied",
+    "explanation": "Een gebied dat voor allerlei stedelijke voorzieningen aangewezen is op een bepaalde stad."
+  },
+  {
+    "concept": "voorstad",
+    "explanation": "Door suburbanisatie snel gegroeid dorp of stadje dichtbij een grote stad. Heet ook suburb."
+  },
+  {
+    "concept": "voorziening",
+    "explanation": "Iets waar bewoners van een wijk gebruik van kunnen maken, zoals een winkel, school, bibliotheek, dokterspraktijk of speelveldje."
+  },
+  {
+    "concept": "wijk",
+    "explanation": "Deel van een dorp of stad. Een wijk bestaat uit verschillende buurten."
+  },
+  {
+    "concept": "woningbezetting",
+    "explanation": "Het gemiddelde aantal mensen dat samen in een woning woont."
+  },
+  {
+    "concept": "woningdichtheid",
+    "explanation": "Het aantal woningen per vierkante kilometer."
+  }
+]
