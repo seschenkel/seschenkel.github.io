@@ -52,14 +52,12 @@ header, footer {
     padding: 10px 20px;
     border-radius: 5px;
     margin: 5px; /* Adjusted to add space between links */
-    font-size: 1.1rem;
+    font-size: 1.2em;
 }
 #index-nav a:hover {
     background-color: #ccc;
 }
 
-
-/* Aardrijkskunde Page */
 .flashcard-container {
     display: flex;
     flex-direction: column;
