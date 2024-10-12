@@ -41,6 +41,9 @@
     .then(data => {
         flashcards = data;
         showNextCard();
+    })
+    .catch(error => {
+        console.error('Error fetching the JSON file:', error);
     });
 
     function showNextCard() {
@@ -50,8 +53,8 @@
         
         // Update content of the front side with the new card
         currentCardIndex = Math.floor(Math.random() * flashcards.length);
-        front.textContent = flashcards[currentCardIndex].number;
-        back.textContent = flashcards[currentCardIndex].german;
+        front.textContent = flashcards[currentCardIndex].number; // Front side
+        back.textContent = flashcards[currentCardIndex].german; // Back side
         back.classList.remove('show');
         flashcard.classList.remove('flipped');
     }
@@ -66,9 +69,9 @@
         }    
     });
 
-
     nextBtn.addEventListener('click', showNextCard);
 </script>
+
 <footer>
     <nav id="index-nav">
         <a href="index.html">terug</a>
