@@ -47,17 +47,21 @@
     });
 
     function showNextCard() {
-        // Always display the front side when showing a new card
-        front.style.display = "block";
-        back.style.display = "none";
-        
-        // Update content of the front side with the new card
-        currentCardIndex = Math.floor(Math.random() * flashcards.length);
-        front.textContent = flashcards[currentCardIndex].number; // Front side
-        back.textContent = flashcards[currentCardIndex].german; // Back side
-        back.classList.remove('show');
-        flashcard.classList.remove('flipped');
-    }
+    // Always display the front side when showing a new card
+    front.style.display = "block";
+    back.style.display = "none";
+
+    // Update content of the front and back sides with the new card
+    currentCardIndex = Math.floor(Math.random() * flashcards.length);
+    
+    // Update the front and back text
+    front.querySelector('h2').textContent = flashcards[currentCardIndex].number; // Front side
+    back.querySelector('h2').textContent = flashcards[currentCardIndex].german; // Back side
+
+    console.log('Current Card:', flashcards[currentCardIndex]); // Debug log
+    flashcard.classList.remove('flipped');
+}
+
 
     flashcard.addEventListener('click', () => {
         if (front.style.display !== "none") {
