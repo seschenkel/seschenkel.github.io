@@ -1,90 +1,330 @@
 [
-  {
-      "concept": "Atlantische driehoekshandel",
-      "explanation": "Handelsnetwerk tussen Europa, Afrika en Amerika, waarin slaven, wapens en zilver verhandeld werden door Europeanen."
-  },
-  {
-      "concept": "Conquistadores",
-      "explanation": "Spaanse avonturiers die in naam van de koning grote delen van Amerika in bezit namen en indiaanse volkeren onderwierpen."
-  },
-  {
-      "concept": "Azteken",
-      "explanation": "Machtig indianenvolk dat leefde in het huidige Mexico; bouwde een hoogstaande beschaving op."
-  },
-  {
-      "concept": "Carriera da India",
-      "explanation": "Door Portugezen ontdekte zeeroute naar India."
-  },
-  {
-      "concept": "Encomienda",
-      "explanation": "Leen van de Spaanse koning in Spaans Amerika, bestaande uit een bepaalde hoeveelheid indianen in een bepaald gebied."
-  },
-  {
-      "concept": "Encomendero",
-      "explanation": "Leenman van de Spaanse koning in Spaans Amerika, die een encomienda in leen heeft."
-  },
-  {
-      "concept": "Factorij",
-      "explanation": "Bewaakte handelspost in een ander (overzees) land."
-  },
-  {
-      "concept": "Geldontwaarding",
-      "explanation": "Geld wordt minder waard als gevolg van prijsstijgingen van goederen. Van hetzelfde geld kun je minder kopen."
-  },
-  {
-      "concept": "Haciënda",
-      "explanation": "Uitgestrekt landgoed dat Spanjaarden in de Nieuwe Wereld in bezit kregen."
-  },
-  {
-      "concept": "Handelskapitalisme",
-      "explanation": "Een systeem waarin kooplieden in handel met verre gebieden investeren om zoveel mogelijk winst te maken."
-  },
-  {
-      "concept": "Handelskapitalisten",
-      "explanation": "Kooplieden die in handel met verre gebieden investeren om zoveel mogelijk winst te maken."
-  },
-  {
-      "concept": "Inca's",
-      "explanation": "Indianenvolk in Zuid-Amerika (het huidige Peru) dat een groot en machtig rijk had opgebouwd."
-  },
-  {
-      "concept": "Khan",
-      "explanation": "Titel van een Mongoolse of Turkse heerser."
-  },
-  {
-      "concept": "Kolonie",
-      "explanation": "Land of gebied dat door een ander land wordt bestuurd, vaak vanwege economisch voordeel."
-  },
-  {
-      "concept": "Kraak",
-      "explanation": "Slagvaardig schip uit de 15e eeuw, geschikt voor het maken van lange-afstandsreizen."
-  },
-  {
-      "concept": "Mestizering",
-      "explanation": "Vermenging van de verschillende bevolkingsgroepen in Spaans-Amerika."
-  },
-  {
-      "concept": "Nieuwe Wetten",
-      "explanation": "Spaanse regels die stelden dat indianen onderdanen van de koning waren en dus eerlijk behandeld moesten worden."
-  },
-  {
-      "concept": "Onderkoninkrijken",
-      "explanation": "Bestuursgebieden in Spaans-Amerika die namens de koning bestuurd werden door een onderkoning."
-  },
-  {
-      "concept": "Osmaanse Rijk",
-      "explanation": "Turks wereldrijk dat vernoemd is naar de stamvader Osman. Het bestond tussen de 15e en 20e eeuw en werd bestuurd vanuit de stad Istanbul."
-  },
-  {
-      "concept": "Pax Ottomana",
-      "explanation": "Periode van economische en sociale stabiliteit in de gebieden die behoorden tot het Osmaanse Rijk in de 16e en 17e eeuw."
-  },
-  {
-      "concept": "Reconquista",
-      "explanation": "Herovering van het Iberisch schiereiland op de moslims, door de christenen."
-  },
-  {
-      "concept": "Zijderoute",
-      "explanation": "Handelsroute tussen Azië - vooral China - en Europa, vernoemd naar de zijden stoffen die per karavaan werden aangevoerd."
-  }
+    {
+        "concept": "luchtstreek",
+        "explanation": "Temperatuurzone op aarde: tropen, gematigde zone en poolstreken."
+    },
+    {
+        "concept": "mechanisatie",
+        "explanation": "Vervanging van menselijke arbeid door machines."
+    },
+    {
+        "concept": "megalopolis/megaregio",
+        "explanation": "Een aantal aaneengesloten stedelijke gebieden met meerdere miljoenensteden."
+    },
+    {
+        "concept": "megastad",
+        "explanation": "Stad met meer dan 10 miljoen inwoners."
+    },
+    {
+        "concept": "metropool",
+        "explanation": "Wereldstad."
+    },
+    {
+        "concept": "migratie/migrant",
+        "explanation": "Verhuizen van de ene woonplaats naar een andere. Iemand die verhuist, is een migrant."
+    },
+    {
+        "concept": "milieuramp",
+        "explanation": "Door mensen veroorzaakte ramp met veel schade in de natuurlijke omgeving."
+    },
+    {
+        "concept": "multinationale onderneming",
+        "explanation": "Bedrijf met vestigingen in verschillende landen."
+    },
+    {
+        "concept": "natuurramp",
+        "explanation": "Ramp veroorzaakt door de natuur met veel slachtoffers en grote schade."
+    },
+    {
+        "concept": "Newly Industrializing Countries (NIC's)",
+        "explanation": "Verzamelnaam voor landen waar de industrie snel is opgekomen. Heet ook opkomende landen of groeilanden."
+    },
+    {
+        "concept": "ontbossing",
+        "explanation": "Het kappen van bossen."
+    },
+    {
+        "concept": "opkomend land",
+        "explanation": "Land dat nog niet echt ontwikkeld is, maar dat wel een snelle economische groei doormaakt. Heet ook groeiland of NIC."
+    },
+    {
+        "concept": "piekafvoer",
+        "explanation": "Extreem hoge waterafvoer in een rivier."
+    },
+    {
+        "concept": "pullfactor",
+        "explanation": "Reden die een gebied aantrekkelijk maakt voor migranten. Heet ook aantrekkingsfactor."
+    },
+    {
+        "concept": "pushfactor",
+        "explanation": "Reden om te verhuizen uit een gebied. Heet ook afstotingsfactor."
+    },
+    {
+        "concept": "regenrivier",
+        "explanation": "Rivier die helemaal afhankelijk is van regenwater."
+    },
+    {
+        "concept": "regiem",
+        "explanation": "Schommelingen in de waterafvoer van een rivier in de loop van een jaar."
+    },
+    {
+        "concept": "regionale ongelijkheid",
+        "explanation": "Verschillen in welvaart tussen het ene en het andere gebied."
+    },
+    {
+        "concept": "relatieve ligging",
+        "explanation": "De ligging van een gebied ten opzichte van andere gebieden en de tijd, kosten en moeite die nodig zijn om het te bereiken."
+    },
+    {
+        "concept": "reliëf",
+        "explanation": "Hoogteverschillen in het landschap."
+    },
+    {
+        "concept": "ruraal-urbane migratie",
+        "explanation": "Migratie van het platteland naar de stad."
+    },
+    {
+        "concept": "sociale ongelijkheid",
+        "explanation": "Verschillen in welvaart en ontwikkelingskansen tussen groepen mensen in een gebied."
+    },
+    {
+        "concept": "speciale economische zone (sez)",
+        "explanation": "Gebied waar buitenlandse bedrijven zich vrij mogen vestigen en weinig belasting betalen."
+    },
+    {
+        "concept": "stadsdorp",
+        "explanation": "Verstedelijkt dorp in China dat helemaal is ingesloten door stedelijke bebouwing."
+    },
+    {
+        "concept": "stadsgewest",
+        "explanation": "Alle dorpen en steden die voor hun werk en voorzieningen op een centrale stad zijn gericht."
+    },
+    {
+        "concept": "stedelijk gebied",
+        "explanation": "Stadsgewesten die (bijna) aan elkaar zijn vastgegroeid."
+    },
+    {
+        "concept": "stroomgebied",
+        "explanation": "Het gebied dat afwatert op de hoofdrivier van een stroomstelsel."
+    },
+    {
+        "concept": "stuwdam",
+        "explanation": "Dam in een rivier met een grote voorraad water erachter (stuwmeer)."
+    },
+    {
+        "concept": "toendra",
+        "explanation": "Boomloos gebied in de poolstreken met begroeiing van grassen, mossen en lage struikjes."
+    },
+    {
+        "concept": "uitschuiven",
+        "explanation": "Het verplaatsen van onderdelen van de productie naar een goedkoper land."
+    },
+    {
+        "concept": "urbanisatie",
+        "explanation": "Het proces waarbij steeds meer mensen in de stad gaan wonen. Heet ook verstedelijking."
+    },
+    {
+        "concept": "urbanisatiegraad",
+        "explanation": "Het percentage stedelingen in een land."
+    },
+    {
+        "concept": "urbanisatietempo",
+        "explanation": "De snelheid waarmee de urbanisatiegraad toeneemt."
+    },
+    {
+        "concept": "vergrijzing",
+        "explanation": "Toename van het aandeel ouderen (55+) in de totale bevolking."
+    },
+    {
+        "concept": "volk",
+        "explanation": "Een groep mensen die al eeuwenlang samenwoont en dezelfde cultuur heeft."
+    },
+    {
+        "concept": "waterscheiding",
+        "explanation": "Grens tussen twee stroomgebieden."
+    },
+    {
+        "concept": "wereldstad",
+        "explanation": "Heel grote stad die op mondiale schaal een rol van betekenis speelt op het gebied van economie, cultuur en politiek. Heet ook global city of metropool."
+    },
+    {
+        "concept": "woningdichtheid",
+        "explanation": "Het aantal woningen per km²."
+    },
+    {
+        "concept": "aantrekkingsfactor",
+        "explanation": "Zie pullfactor."
+    },
+    {
+        "concept": "afstotingsfactor",
+        "explanation": "Zie pushfactor."
+    },
+    {
+        "concept": "afzetmarkt",
+        "explanation": "Het aantal klanten dat producten wil kopen."
+    },
+    {
+        "concept": "agglomeratie",
+        "explanation": "Een stad met daaraan vastgegroeide (voor)steden en dorpen."
+    },
+    {
+        "concept": "aquifer",
+        "explanation": "Waterdragende laag in de ondergrond."
+    },
+    {
+        "concept": "arbeidsintensief",
+        "explanation": "Bedrijf dat veel arbeid nodig heeft."
+    },
+    {
+        "concept": "arbeidsmigrant",
+        "explanation": "Iemand die ergens anders gaat werken vanwege gebrek aan werk en geld in zijn eigen gebied."
+    },
+    {
+        "concept": "assemblage",
+        "explanation": "Het in elkaar zetten van een product."
+    },
+    {
+        "concept": "bevolkingsconcentratie",
+        "explanation": "Opeenhoping van mensen in een gebied."
+    },
+    {
+        "concept": "bevolkingsdiagram",
+        "explanation": "Staafdiagram met de leeftijdsopbouw van de bevolking."
+    },
+    {
+        "concept": "bevolkingsdichtheid",
+        "explanation": "Het gemiddelde aantal inwoners per vierkante kilometer (inw/km²)."
+    },
+    {
+        "concept": "bevolkingspolitiek",
+        "explanation": "Maatregelen van de overheid om het aantal en de spreiding van de bevolking te beïnvloeden."
+    },
+    {
+        "concept": "bevolkingsspreiding",
+        "explanation": "De verdeling van mensen over een land of gebied."
+    },
+    {
+        "concept": "bodemerosie",
+        "explanation": "Het verdwijnen van de bovenste laag van de bodem door water of wind."
+    },
+    {
+        "concept": "communisme",
+        "explanation": "Politieke vorm waarbij de staat alle bedrijven bezit en bepaalt welke producten worden gemaakt."
+    },
+    {
+        "concept": "cultuur",
+        "explanation": "Alles wat je hebt aangeleerd."
+    },
+    {
+        "concept": "debiet",
+        "explanation": "De hoeveelheid water die op een bepaald punt door de rivier stroomt in m³ per seconde."
+    },
+    {
+        "concept": "delta",
+        "explanation": "Een gebied vlak voor de monding, waar de rivier zich vertakt in veel rivierlopen."
+    },
+    {
+        "concept": "dimensie",
+        "explanation": "De invalshoek van waaruit je naar een gebied of onderwerp kijkt."
+    },
+    {
+        "concept": "drijvende bevolking",
+        "explanation": "Migranten in China die ergens anders wonen dan waar ze staan ingeschreven."
+    },
+    {
+        "concept": "eenkindpolitiek",
+        "explanation": "Politiek waarbij gezinnen niet meer dan één kind mogen hebben."
+    },
+    {
+        "concept": "etnische groep",
+        "explanation": "Een groep mensen met een andere cultuur dan die van andere bevolkingsgroepen in een land."
+    },
+    {
+        "concept": "etnische minderheid",
+        "explanation": "Etnische groep die in een land in de minderheid is."
+    },
+    {
+        "concept": "export",
+        "explanation": "Uitvoer van goederen en diensten naar een ander land."
+    },
+    {
+        "concept": "gemengde rivier",
+        "explanation": "Rivier die behalve regenwater ook smeltwater van gletsjers afvoert."
+    },
+    {
+        "concept": "gletsjerrivier",
+        "explanation": "Rivier die smeltwater van een gletsjer afvoert."
+    },
+    {
+        "concept": "global city",
+        "explanation": "Zie wereldstad."
+    },
+    {
+        "concept": "globalisering",
+        "explanation": "Het doorgaande proces van internationale uitwisseling van mensen, goederen, geld en informatie (kennis, cultuur)."
+    },
+    {
+        "concept": "groeiland",
+        "explanation": "Zie opkomend land."
+    },
+    {
+        "concept": "grondwater",
+        "explanation": "Water dat in de grond is weggezakt."
+    },
+    {
+        "concept": "grondwaterpeil",
+        "explanation": "Bovenkant van het grondwater."
+    },
+    {
+        "concept": "hightechindustrie",
+        "explanation": "Industrie die gebaseerd is op hoogstaande technische kennis."
+    },
+    {
+        "concept": "hoogvlakte",
+        "explanation": "Vlak of zacht golvend gebied dat meer dan 500 meter hoog ligt."
+    },
+    {
+        "concept": "hydro-elektriciteit",
+        "explanation": "Elektriciteit opgewekt door waterkracht."
+    },
+    {
+        "concept": "infrastructuur",
+        "explanation": "Alle voorzieningen die nodig zijn om personen, goederen en informatie te vervoeren."
+    },
+    {
+        "concept": "internationale arbeidsverdeling",
+        "explanation": "De verdeling van het werk over verschillende landen."
+    },
+    {
+        "concept": "irrigatie",
+        "explanation": "Het kunstmatig nathouden van landbouwgronden."
+    },
+    {
+        "concept": "isotherm",
+        "explanation": "Lijn die plaatsen met een gelijke temperatuur met elkaar verbindt."
+    },
+    {
+        "concept": "kennisintensief",
+        "explanation": "Er is veel vakkennis nodig om producten te maken."
+    },
+    {
+        "concept": "kolonie",
+        "explanation": "Gebied in een ander werelddeel dat in het bezit is van (meestal) een Europees land."
+    },
+    {
+        "concept": "laagvlakte",
+        "explanation": "Gebied zonder hoogteverschillen dat lager ligt dan 500 meter."
+    },
+    {
+        "concept": "lagelonenland",
+        "explanation": "Land met lage arbeidskosten."
+    },
+    {
+        "concept": "leeftijdsopbouw",
+        "explanation": "De samenstelling van de bevolking in verschillende leeftijdsgroepen."
+    },
+    {
+        "concept": "levensverwachting",
+        "explanation": "Het gemiddelde aantal te verwachten levensjaren op een bepaalde leeftijd."
+    }
 ]
