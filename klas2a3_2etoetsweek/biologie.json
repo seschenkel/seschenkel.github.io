@@ -1,38 +1,314 @@
 [
     {
-        "concept": "Vitamine A",
-        "explanation": "Nodig voor het zien bij weinig licht en voor de groei."
+        "concept": "hart",
+        "explanation": "Spier die bloed door het lichaam pompt."
     },
     {
-        "concept": "Vitamine C",
-        "explanation": "Nodig voor de vorming van rode bloedcellen, wondgenezing en voor de weerstand tegen ziekten."
+        "concept": "hartboezem",
+        "explanation": "Bovenste deel van het hart waar bloed binnenkomt uit de aders."
     },
     {
-        "concept": "Vitamine B1",
-        "explanation": "Nodig voor de verbranding van glucose in cellen, waarbij energie ontstaat."
+        "concept": "hartkamer",
+        "explanation": "Onderste deel van het hart dat bloed wegpompt naar de slagaders."
     },
     {
-        "concept": "Vitamine D",
-        "explanation": "Nodig voor de afzetting van calcium in de botten. Onder invloed van zonlicht maakt de huid ook vitamine D aan."
+        "concept": "harttussenwand",
+        "explanation": "Wand die de linker- en rechterzijde van het hart scheidt."
     },
     {
-        "concept": "Vitamine B6",
-        "explanation": "Nodig voor groel, de aanmaak van bloed en voor de werking van het zenuwstelsel."
+        "concept": "longader",
+        "explanation": "Bloedvat dat zuurstofrijk bloed van de longen naar het hart vervoert."
     },
     {
-        "concept": "Vitamine E",
-        "explanation": "Nodig voor bescherming van cellen en weefsels, voor de weerstand en het vertraagt (huld)veroudering."
+        "concept": "holle ader",
+        "explanation": "Grote ader die zuurstofarm bloed naar het hart terugbrengt."
     },
     {
-        "concept": "Ijzer",
-        "explanation": "Nodig voor de vorming van hemoglobine (in rode bloedcellen), voor zuurstoftransport in het bloed"
+        "concept": "longslagader",
+        "explanation": "Bloedvat dat zuurstofarm bloed van het hart naar de longen vervoert."
     },
     {
-        "concept": "Calcium (kalk)",
-        "explanation": "Nodig voor de opbouw en het onderhoud van botten en tanden en voor een goede werking van de zenuwen en spieren."
+        "concept": "aorta",
+        "explanation": "Grote slagader die zuurstofrijk bloed van het hart naar het lichaam voert."
     },
     {
-        "concept": "Fosfor",
-        "explanation": "Nodig voor stevigheid van botten en tanden en voor het ontstaan van energie uit glucose in het lichaam."
+        "concept": "hartkleppen",
+        "explanation": "Kleppen die ervoor zorgen dat bloed in de juiste richting door het hart stroomt."
+    },
+    {
+        "concept": "slagaderkleppen",
+        "explanation": "Kleppen die voorkomen dat bloed terugstroomt in het hart vanuit de slagaders."
+    },
+    {
+        "concept": "hartslag",
+        "explanation": "Het ritmisch samentrekken van het hart om bloed te pompen."
+    },
+    {
+        "concept": "rode bloedcellen",
+        "explanation": "Bloedcellen die zuurstof vervoeren door het lichaam."
+    },
+    {
+        "concept": "haarvaatjes",
+        "explanation": "De kleinste bloedvaten waar uitwisseling van stoffen plaatsvindt."
+    },
+    {
+        "concept": "bloedplasma",
+        "explanation": "Vloeibaar deel van het bloed dat voedingsstoffen, afvalstoffen en hormonen vervoert."
+    },
+    {
+        "concept": "glucose",
+        "explanation": "Eenvoudige suiker die energie levert aan het lichaam."
+    },
+    {
+        "concept": "zuurstof",
+        "explanation": "Gas dat nodig is voor de verbranding in cellen."
+    },
+    {
+        "concept": "weefselvloeistof",
+        "explanation": "Vloeistof die zich buiten de bloedvaten in de weefsels bevindt."
+    },
+    {
+        "concept": "lymfevat",
+        "explanation": "Buisjes die lymfe door het lichaam vervoeren."
+    },
+    {
+        "concept": "lymfe",
+        "explanation": "Heldere vloeistof die afvalstoffen en overtollig vocht afvoert."
+    },
+    {
+        "concept": "lever",
+        "explanation": "Orgaan dat afvalstoffen afbreekt en voedingsstoffen opslaat."
+    },
+    {
+        "concept": "leverslagader",
+        "explanation": "Bloedvat dat zuurstofrijk bloed naar de lever brengt."
+    },
+    {
+        "concept": "poortader",
+        "explanation": "Bloedvat dat voedingsstoffen van de darmen naar de lever vervoert."
+    },
+    {
+        "concept": "aminozuren",
+        "explanation": "Bouwstenen van eiwitten."
+    },
+    {
+        "concept": "cholesterol",
+        "explanation": "Vetachtige stof die nodig is voor celmembranen en hormonen."
+    },
+    {
+        "concept": "ureum",
+        "explanation": "Afvalstof die ontstaat bij de afbraak van eiwitten en via urine wordt uitgescheiden."
+    },
+    {
+        "concept": "gal",
+        "explanation": "Vloeistof die vetten helpt verteren."
+    },
+    {
+        "concept": "bilirubine",
+        "explanation": "Afvalstof die ontstaat bij de afbraak van rode bloedcellen."
+    },
+    {
+        "concept": "glycogeen",
+        "explanation": "Opslagvorm van glucose in de lever en spieren."
+    },
+    {
+        "concept": "ijzer",
+        "explanation": "Mineraal nodig voor de aanmaak van hemoglobine in rode bloedcellen."
+    },
+    {
+        "concept": "geheugencellen",
+        "explanation": "Cellen die bij een volgende infectie sneller kunnen reageren op dezelfde ziekteverwekker."
+    },
+    {
+        "concept": "actieve immuniteit",
+        "explanation": "Immuniteit die ontstaat na blootstelling aan een ziekteverwekker of vaccin."
+    },
+    {
+        "concept": "inenting",
+        "explanation": "Het toedienen van een vaccin om immuniteit op te bouwen."
+    },
+    {
+        "concept": "vaccinatie",
+        "explanation": "Proces waarbij een vaccin wordt toegediend."
+    },
+    {
+        "concept": "vaccin",
+        "explanation": "Stof die een immuunreactie opwekt zonder dat je ziek wordt."
+    },
+    {
+        "concept": "seruminjectie",
+        "explanation": "Injectie met antistoffen voor onmiddellijke, tijdelijke immuniteit."
+    },
+    {
+        "concept": "passieve immuniteit",
+        "explanation": "Immuniteit door het toedienen van antistoffen, zonder eigen immuunreactie."
+    },
+    {
+        "concept": "hypothalamus",
+        "explanation": "Deel van de hersenen dat hormonen reguleert en lichaamsfuncties bewaakt."
+    },
+    {
+        "concept": "infectie",
+        "explanation": "Het binnendringen van ziekteverwekkers in het lichaam."
+    },
+    {
+        "concept": "infectieziekten",
+        "explanation": "Ziekten veroorzaakt door micro-organismen zoals bacteriën en virussen."
+    },
+    {
+        "concept": "verkoudheid",
+        "explanation": "Milde infectie van de luchtwegen, vaak veroorzaakt door een virus."
+    },
+    {
+        "concept": "griep",
+        "explanation": "Ernstigere infectie van de luchtwegen, vaak veroorzaakt door het influenzavirus."
+    },
+    {
+        "concept": "incubatietijd",
+        "explanation": "Tijd tussen besmetting en het optreden van symptomen."
+    },
+    {
+        "concept": "symptomen",
+        "explanation": "Kenmerken of klachten die bij een ziekte horen."
+    },
+    {
+        "concept": "diagnose",
+        "explanation": "Vaststelling van een ziekte op basis van symptomen en onderzoeken."
+    },
+    {
+        "concept": "prognose",
+        "explanation": "Verwachting van het verloop van een ziekte."
+    },
+    {
+        "concept": "micro-organismen",
+        "explanation": "Kleine organismen zoals bacteriën, virussen en schimmels."
+    },
+    {
+        "concept": "ziekteverwekkers",
+        "explanation": "Micro-organismen die ziekten veroorzaken."
+    },
+    {
+        "concept": "bacteriën",
+        "explanation": "Eencellige micro-organismen, soms ziekteverwekkend."
+    },
+    {
+        "concept": "schimmels",
+        "explanation": "Organismen die soms infecties veroorzaken, zoals voetschimmel."
+    },
+    {
+        "concept": "virussen",
+        "explanation": "Ziekteverwekkers die alleen in levende cellen kunnen vermenigvuldigen."
+    },
+    {
+        "concept": "ultraviolette straling",
+        "explanation": "Straling van de zon die huidcellen kan beschadigen."
+    },
+    {
+        "concept": "pigment",
+        "explanation": "Kleurstof in de huid die beschermt tegen uv-straling."
+    },
+    {
+        "concept": "huidkanker",
+        "explanation": "Kanker die ontstaat door abnormale groei van huidcellen."
+    },
+    {
+        "concept": "gezwel",
+        "explanation": "Abnormale weefselgroei; kan goedaardig of kwaadaardig zijn."
+    },
+    {
+        "concept": "tumor",
+        "explanation": "Synoniem voor gezwel."
+    },
+    {
+        "concept": "uitzaaiing",
+        "explanation": "Verspreiding van kankercellen naar andere delen van het lichaam."
+    },
+    {
+        "concept": "fibrinogeen",
+        "explanation": "Eiwit in bloedplasma dat betrokken is bij bloedstolling."
+    },
+    {
+        "concept": "fibrinedraden",
+        "explanation": "Draadachtige structuren die bloedstolling mogelijk maken."
+    },
+    {
+        "concept": "bloedstolling",
+        "explanation": "Proces waarbij bloed hard wordt om wonden af te sluiten."
+    },
+    {
+        "concept": "zweetklieren",
+        "explanation": "Klieren in de huid die zweet produceren."
+    },
+    {
+        "concept": "zweet",
+        "explanation": "Vloeistof die het lichaam afkoelt bij verdamping."
+    },
+    {
+        "concept": "kippenvel",
+        "explanation": "Reactie van de huid op kou of emotie, waarbij haartjes rechtop staan."
+    },
+    {
+        "concept": "opperhuid",
+        "explanation": "Buitenste laag van de huid die bescherming biedt."
+    },
+    {
+        "concept": "hoornlaag",
+        "explanation": "Bovenste laag van de opperhuid, bestaande uit dode huidcellen."
+    },
+    {
+        "concept": "kiemlaag",
+        "explanation": "Onderste laag van de opperhuid waar nieuwe cellen worden gevormd."
+    },
+    {
+        "concept": "lederhuid",
+        "explanation": "Huidlaag onder de opperhuid, met bloedvaten en zenuwen."
+    },
+    {
+        "concept": "talg",
+        "explanation": "Vettige stof die de huid soepel houdt."
+    },
+    {
+        "concept": "onderhuids bindweefsel",
+        "explanation": "Laag onder de huid die vet en bloedvaten bevat."
+    },
+    {
+        "concept": "buikholte",
+        "explanation": "Ruimte in het lichaam waarin organen zoals de maag en darmen liggen."
+    },
+    {
+        "concept": "urine",
+        "explanation": "Afvalstof die door de nieren wordt uitgescheiden."
+    },
+    {
+        "concept": "blaas",
+        "explanation": "Orgaan dat urine tijdelijk opslaat."
+    },
+    {
+        "concept": "alvleesklier",
+        "explanation": "Orgaan dat spijsverteringssappen en hormonen zoals insuline produceert."
+    },
+    {
+        "concept": "glucagon",
+        "explanation": "Hormoon dat de bloedsuikerspiegel verhoogt door glycogeen om te zetten in glucose."
+    },
+    {
+        "concept": "insuline",
+        "explanation": "Hormoon dat de opname van glucose in cellen bevordert en de bloedsuikerspiegel verlaagt."
+    },
+    {
+        "concept": "lever",
+        "explanation": "Orgaan dat belangrijke stoffen verwerkt en afvalstoffen verwijdert."
+    },
+    {
+        "concept": "aangeschoten van alcohol",
+        "explanation": "Lichte beïnvloeding van gedrag en coördinatie door alcoholgebruik."
+    },
+    {
+        "concept": "dronken van alcohol",
+        "explanation": "Ernstige beïnvloeding van gedrag en coördinatie door overmatig alcoholgebruik."
+    },
+    {
+        "concept": "alcoholvergiftiging",
+        "explanation": "Levensgevaarlijke situatie door een te hoog alcoholgehalte in het bloed."
     }
 ]
