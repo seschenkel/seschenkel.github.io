@@ -1,0 +1,166 @@
+[
+    {
+        "concept": "mangroven",
+        "explanation": "Tropische kustbossen met bomen die in zout water groeien, belangrijk voor kustbescherming en biodiversiteit."
+    },
+    {
+        "concept": "tropisch regenwoud",
+        "explanation": "Dichtbegroeide bossen in warme, vochtige gebieden rond de evenaar, met veel biodiversiteit."
+    },
+    {
+        "concept": "steppe",
+        "explanation": "Droog grasland met weinig bomen, vooral geschikt voor veeteelt."
+    },
+    {
+        "concept": "aanlandige wind",
+        "explanation": "Wind die vanaf zee naar het land waait, vaak vochtig."
+    },
+    {
+        "concept": "aflandige wind",
+        "explanation": "Wind die vanaf het land naar de zee waait, vaak droog."
+    },
+    {
+        "concept": "beroepsbevolking",
+        "explanation": "Mensen tussen 15 en 65 jaar die werken of beschikbaar zijn om te werken."
+    },
+    {
+        "concept": "informele sector",
+        "explanation": "Economische activiteiten zonder officiële registratie of belastingen, zoals straatverkoop."
+    },
+    {
+        "concept": "natuurlijke hulpbronnen",
+        "explanation": "Materialen uit de natuur, zoals water, hout of olie, die economisch nuttig zijn."
+    },
+    {
+        "concept": "krottenwijken",
+        "explanation": "Arme stadswijken met slechte huisvesting en weinig voorzieningen."
+    },
+    {
+        "concept": "urbanisatiegraad",
+        "explanation": "Percentage van de bevolking dat in steden woont."
+    },
+    {
+        "concept": "welvaart",
+        "explanation": "De mate waarin mensen over voldoende geld en goederen beschikken."
+    },
+    {
+        "concept": "welzijn",
+        "explanation": "De algemene kwaliteit van leven, inclusief gezondheid en geluk."
+    },
+    {
+        "concept": "ruraal-urbane migratie",
+        "explanation": "Verhuizing van mensen van het platteland naar de stad."
+    },
+    {
+        "concept": "urbanisatietempo",
+        "explanation": "De snelheid waarmee de stedelijke bevolking toeneemt."
+    },
+    {
+        "concept": "sociale bevolkingsgroei",
+        "explanation": "Bevolkingsgroei door migratie (in- en uitverhuizingen)."
+    },
+    {
+        "concept": "vruchtbare leeftijd",
+        "explanation": "Levensfase waarin vrouwen kinderen kunnen krijgen, meestal 15-49 jaar."
+    },
+    {
+        "concept": "vruchtbaarheidscijfer",
+        "explanation": "Gemiddeld aantal kinderen dat een vrouw krijgt in haar leven."
+    },
+    {
+        "concept": "natuurlijke bevolkingsgroei",
+        "explanation": "Bevolkingsgroei door geboorte en sterfte."
+    },
+    {
+        "concept": "infrastructuur",
+        "explanation": "Voorzieningen zoals wegen, bruggen, elektriciteit en internet, nodig voor economische activiteiten."
+    },
+    {
+        "concept": "bevolkingsprognoses",
+        "explanation": "Voorspellingen over de groei en samenstelling van de bevolking in de toekomst."
+    },
+    {
+        "concept": "urban sprawl",
+        "explanation": "Ongecontroleerde groei van steden, vaak ten koste van natuur en landbouwgrond."
+    },
+    {
+        "concept": "vrije wereldhandel",
+        "explanation": "Handel tussen landen zonder invoerrechten of andere barrières."
+    },
+    {
+        "concept": "invoerrechten",
+        "explanation": "Belasting op geïmporteerde goederen."
+    },
+    {
+        "concept": "remittances",
+        "explanation": "Geld dat migranten naar hun familie in het land van herkomst sturen."
+    },
+    {
+        "concept": "braindrain",
+        "explanation": "Het wegtrekken van hoogopgeleide mensen naar het buitenland."
+    },
+    {
+        "concept": "noodhulp",
+        "explanation": "Directe hulp bij rampen, zoals voedsel of medicijnen."
+    },
+    {
+        "concept": "ondervoeding",
+        "explanation": "Een toestand waarin iemand te weinig voedsel of essentiële voedingsstoffen binnenkrijgt."
+    },
+    {
+        "concept": "bilaterale hulp",
+        "explanation": "Hulp van één land aan een ander land."
+    },
+    {
+        "concept": "multilaterale hulp",
+        "explanation": "Hulp die via internationale organisaties wordt verstrekt, zoals de VN."
+    },
+    {
+        "concept": "niet-gouvernementele organisaties",
+        "explanation": "Organisaties die onafhankelijk van overheden hulp bieden, zoals Oxfam."
+    },
+    {
+        "concept": "buitenlandse investeringen",
+        "explanation": "Geld dat bedrijven of overheden in een ander land investeren."
+    },
+    {
+        "concept": "bnp per inwoner",
+        "explanation": "Bruto Nationaal Product gedeeld door het aantal inwoners; een maat voor welvaart."
+    },
+    {
+        "concept": "afzetmarkt",
+        "explanation": "De groep consumenten of bedrijven waaraan een product wordt verkocht."
+    },
+    {
+        "concept": "regionale ongelijkheid",
+        "explanation": "Grote verschillen in welvaart en ontwikkeling tussen gebieden binnen een land."
+    },
+    {
+        "concept": "bruto nationaal product (bnp)",
+        "explanation": "Totale waarde van goederen en diensten die door een land worden geproduceerd in een jaar."
+    },
+    {
+        "concept": "export",
+        "explanation": "Het verkopen van goederen en diensten aan het buitenland."
+    },
+    {
+        "concept": "corruptie",
+        "explanation": "Misbruik van macht voor persoonlijk gewin, zoals het aannemen van steekpenningen."
+    },
+    {
+        "concept": "economische diversificatie",
+        "explanation": "Het spreiden van economische activiteiten over verschillende sectoren."
+    },
+    {
+        "concept": "dienstensector",
+        "explanation": "Economische sector gericht op dienstverlening, zoals handel, onderwijs en zorg."
+    },
+    {
+        "concept": "deelstaten",
+        "explanation": "Regio’s binnen een land met een eigen bestuur, zoals in Duitsland of de VS."
+    },
+    {
+        "concept": "kolonie",
+        "explanation": "Gebied dat door een ander land wordt bestuurd en vaak wordt gebruikt voor economische voordelen."
+    }
+]

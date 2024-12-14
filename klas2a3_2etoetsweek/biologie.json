@@ -1,0 +1,38 @@
+[
+    {
+        "concept": "Vitamine A",
+        "explanation": "Nodig voor het zien bij weinig licht en voor de groei."
+    },
+    {
+        "concept": "Vitamine C",
+        "explanation": "Nodig voor de vorming van rode bloedcellen, wondgenezing en voor de weerstand tegen ziekten."
+    },
+    {
+        "concept": "Vitamine B1",
+        "explanation": "Nodig voor de verbranding van glucose in cellen, waarbij energie ontstaat."
+    },
+    {
+        "concept": "Vitamine D",
+        "explanation": "Nodig voor de afzetting van calcium in de botten. Onder invloed van zonlicht maakt de huid ook vitamine D aan."
+    },
+    {
+        "concept": "Vitamine B6",
+        "explanation": "Nodig voor groel, de aanmaak van bloed en voor de werking van het zenuwstelsel."
+    },
+    {
+        "concept": "Vitamine E",
+        "explanation": "Nodig voor bescherming van cellen en weefsels, voor de weerstand en het vertraagt (huld)veroudering."
+    },
+    {
+        "concept": "Ijzer",
+        "explanation": "Nodig voor de vorming van hemoglobine (in rode bloedcellen), voor zuurstoftransport in het bloed"
+    },
+    {
+        "concept": "Calcium (kalk)",
+        "explanation": "Nodig voor de opbouw en het onderhoud van botten en tanden en voor een goede werking van de zenuwen en spieren."
+    },
+    {
+        "concept": "Fosfor",
+        "explanation": "Nodig voor stevigheid van botten en tanden en voor het ontstaan van energie uit glucose in het lichaam."
+    }
+]

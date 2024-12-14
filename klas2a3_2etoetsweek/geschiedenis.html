@@ -3,13 +3,13 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aardrijkskunde - December 2024</title>
+        <title>Geschiedenis - Oktober 2024</title>
         <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
     </head>
 
 <body>
     <header id="index-header">
-        <h1>Aardrijkskunde</h1>
+        <h1>Geschiedenis</h1>
     </header>
 
 <div class="flashcard-container">
@@ -36,7 +36,7 @@
     let currentCardIndex = -1;
     let flashcards = [];
 
-    fetch('aardrijkskunde.json')
+    fetch('geschiedenis.json')
     .then(response => response.json())
     .then(data => {
         flashcards = data;

@@ -3,24 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Aardrijkskunde - December 2024</title>
+        <title>Duits - Oktober 2024</title>
         <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS file -->
     </head>
 
 <body>
     <header id="index-header">
-        <h1>Aardrijkskunde</h1>
+        <h1>Duits</h1>
     </header>
 
 <div class="flashcard-container">
     <div class="flashcard">
         <div class="front">
             <h2>Front of Card</h2>
-            <p>Click to reveal the back</p>
         </div>
         <div class="back">
             <h2>Back of Card</h2>
-            <p>This is where the explanation goes</p>
         </div>
     </div>
     <button class="btn" id="next-btn">volgende</button>
@@ -36,25 +34,32 @@
     let currentCardIndex = -1;
     let flashcards = [];
 
-    fetch('aardrijkskunde.json')
+    fetch('duits.json')
     .then(response => response.json())
     .then(data => {
         flashcards = data;
         showNextCard();
+    })
+    .catch(error => {
+        console.error('Error fetching the JSON file:', error);
     });
 
     function showNextCard() {
-        // Always display the front side when showing a new card
-        front.style.display = "block";
-        back.style.display = "none";
-        
-        // Update content of the front side with the new card
-        currentCardIndex = Math.floor(Math.random() * flashcards.length);
-        front.textContent = flashcards[currentCardIndex].concept;
-        back.textContent = flashcards[currentCardIndex].explanation;
-        back.classList.remove('show');
-        flashcard.classList.remove('flipped');
-    }
+    // Always display the front side when showing a new card
+    front.style.display = "block";
+    back.style.display = "none";
+
+    // Update content of the front and back sides with the new card
+    currentCardIndex = Math.floor(Math.random() * flashcards.length);
+    
+    // Update the front and back text
+    front.querySelector('h2').textContent = flashcards[currentCardIndex].number; // Front side
+    back.querySelector('h2').textContent = flashcards[currentCardIndex].german; // Back side
+
+    console.log('Current Card:', flashcards[currentCardIndex]); // Debug log
+    flashcard.classList.remove('flipped');
+}
+
 
     flashcard.addEventListener('click', () => {
         if (front.style.display !== "none") {
@@ -66,9 +71,9 @@
         }    
     });
 
-
     nextBtn.addEventListener('click', showNextCard);
 </script>
+
 <footer>
     <nav id="index-nav">
         <a href="index.html">terug</a>
