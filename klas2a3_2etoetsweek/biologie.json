@@ -310,5 +310,65 @@
     {
         "concept": "alcoholvergiftiging",
         "explanation": "Levensgevaarlijke situatie door een te hoog alcoholgehalte in het bloed."
+    },
+    {
+        "concept": "koolstofmonoxide",
+        "explanation": "Geurloos en giftig gas dat zuurstof in het bloed verdringt."
+    },
+    {
+        "concept": "nicotine",
+        "explanation": "Verslavende stof in tabak die het zenuwstelsel beïnvloedt."
+    },
+    {
+        "concept": "COPD",
+        "explanation": "Chronische longaandoening die ademhaling bemoeilijkt."
+    },
+    {
+        "concept": "Chronische bronchitis",
+        "explanation": "Langdurige ontsteking van de luchtwegen die leidt tot overmatige slijmvorming."
+    },
+    {
+        "concept": "longemfyseem",
+        "explanation": "Chronische aandoening waarbij longblaasjes beschadigd raken en de longfunctie afneemt."
+    },
+    {
+        "concept": "longkanker",
+        "explanation": "Kwaadaardige tumor in de longen door abnormale celdeling."
+    },
+    {
+        "concept": "lymfevatenstelsel",
+        "explanation": "Netwerk van vaten dat lymfe door het lichaam transporteert."
+    },
+    {
+        "concept": "lymfeknoppen",
+        "explanation": "Kleine orgaantjes in het lymfestelsel die lymfe filteren."
+    },
+    {
+        "concept": "lymfeklieren",
+        "explanation": "Synoniem voor lymfeknoppen; betrokken bij afweer tegen infecties."
+    },
+    {
+        "concept": "keelamandelen",
+        "explanation": "Weefsel achter in de keel dat helpt bij de afweer tegen infecties."
+    },
+    {
+        "concept": "kleine bloedsomloop",
+        "explanation": "De route van het bloed van het hart naar de longen en terug naar het hart."
+    },
+    {
+        "concept": "grote bloedsomloop",
+        "explanation": "De route van het bloed van het hart naar het lichaam en terug naar het hart."
+    },
+    {
+        "concept": "kransslagaders",
+        "explanation": "Bloedvaten die het hart zelf van zuurstof en voedingsstoffen voorzien."
+    },
+    {
+        "concept": "haarvaten",
+        "explanation": "De kleinste bloedvaten waar uitwisseling van zuurstof, koolstofdioxide en voedingsstoffen plaatsvindt."
+    },
+    {
+        "concept": "AV-knoop",
+        "explanation": "Atrioventriculaire knoop; een onderdeel van het hart dat de elektrische prikkels tussen de boezems en kamers coördineert."
     }
 ]
